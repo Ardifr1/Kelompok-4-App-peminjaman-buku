@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TestingController;
+use App\Http\Controllers\KAnggotaController;
 Route::get('/', function () {
     return view('welcome');
 });
