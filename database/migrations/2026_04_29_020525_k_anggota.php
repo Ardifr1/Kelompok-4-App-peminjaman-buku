@@ -11,7 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        schema::create('Anggota', function (blueprint $table) {
+            $table->id();
+            $table->string('nama');
+            $table->string('kelas');
+            $table->string('NIS');
+            $table->string('Username');
+        });
     }
 
     /**
