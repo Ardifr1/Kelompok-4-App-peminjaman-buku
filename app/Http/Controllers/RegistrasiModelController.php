@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RegistrasiModel;
 use Illuminate\Http\Request;
 
-class KAnggotaController extends Controller
+class RegistrasiModelController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('index');
+        //
     }
 
     /**
@@ -33,7 +34,7 @@ class KAnggotaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(RegistrasiModel $registrasiModel)
     {
         //
     }
@@ -41,7 +42,7 @@ class KAnggotaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(RegistrasiModel $registrasiModel)
     {
         //
     }
@@ -49,7 +50,7 @@ class KAnggotaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, RegistrasiModel $registrasiModel)
     {
         //
     }
@@ -57,7 +58,7 @@ class KAnggotaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(RegistrasiModel $registrasiModel)
     {
         //
     }
