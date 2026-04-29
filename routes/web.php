@@ -6,4 +6,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('Testing', [TestingController::class]);
+Route::get('/kelolaAnggota', [KAnggotaController::class, 'index']);
