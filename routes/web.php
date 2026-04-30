@@ -7,6 +7,7 @@ use App\Http\Controllers\TestingController;
 use App\Http\Controllers\KAnggotaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\dashbordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ Route::get('/kelolaAnggota', [KAnggotaController::class, 'index']);
 // Route Autentikasi
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/dashbord', [dashbordController::class, 'index']);
