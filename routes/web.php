@@ -12,7 +12,11 @@ use App\Http\Controllers\TestingController;
 =======
 use App\Http\Controllers\KAnggotaController;
 use App\Http\Controllers\LoginController;
+<<<<<<< HEAD
 >>>>>>> back-end
+=======
+use App\Http\Controllers\RegisterController;
+>>>>>>> 7b88295fbd41641db6754d80e8b28ac94842028e
 Route::get('/', function () {
     return view('welcome');
 });
@@ -26,4 +30,8 @@ Route::get('/kelolaAnggota', [KAnggotaController::class, 'index']);
 =======
 Route::get('/kelolaAnggota', [KAnggotaController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index']);
+<<<<<<< HEAD
 >>>>>>> back-end
+=======
+Route::get('/register', [RegisterController::class,'index']);
+>>>>>>> 7b88295fbd41641db6754d80e8b28ac94842028e
