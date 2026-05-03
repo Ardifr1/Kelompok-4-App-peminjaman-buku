@@ -45,7 +45,21 @@
                 <input type="text" name="nama" placeholder="Nama" class="input-field w-full px-5 py-3 focus:outline-none placeholder-gray-500 text-lg">
             </div>
             <div>
-                <input type="text" name="kelas" placeholder="Kelas" class="input-field w-full px-5 py-3 focus:outline-none placeholder-gray-500 text-lg">
+                <select name="kelas" class="input-field w-full px-5 py-3 focus:outline-none text-gray-700 text-lg appearance-none cursor-pointer">
+                    <option value="" disabled selected>Pilih Kelas</option>
+                    <option value="XPPLG1">Kelas X PPLG 1</option>
+                    <option value="XPPLG2">Kelas X PPLG 2</option>
+                    <option value="XDKV1">Kelas X DKV 1</option>
+                    <option value="XDKV2">Kelas X DKV 2</option>
+                    <option value="XIPPLG1">Kelas XI PPLG 1</option>
+                    <option value="XIPPLG2">Kelas XI PPLG 2</option>
+                    <option value="XIDKV1">Kelas XI DKV 1</option>
+                    <option value="XIDKV2">Kelas XI DKV 2</option>
+                    <option value="XIIPPLG1">Kelas XII PPLG 1</option>
+                    <option value="XIIPPLG2">Kelas XII PPLG 2</option>
+                    <option value="XIIDKV1">Kelas XII DKV 1</option>
+                    <option value="XIIDKV2">Kelas XII DKV 2</option>
+                </select>
             </div>
             <div>
                 <input type="password" name="password" placeholder="Password" class="input-field w-full px-5 py-3 focus:outline-none placeholder-gray-500 text-lg">
