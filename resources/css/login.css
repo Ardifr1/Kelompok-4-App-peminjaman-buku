@@ -91,7 +91,7 @@ body {
     width: 140px;
     padding: 14px;
     background-color: #00ff00; /* Bright green */
-    color: white;
+    color: black;
     border: none;
     border-radius: 30px;
     font-size: 16px;
@@ -103,7 +103,8 @@ body {
 }
 
 .login-btn:hover {
-    background-color: #00e600;
+    background-color: #00ff006f;
+    color: white;
 }
 
 .register-text {

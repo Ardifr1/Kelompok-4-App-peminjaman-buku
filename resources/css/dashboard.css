@@ -1,0 +1,184 @@
+/* RESET DASAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.logo-img {
+    width: 60px !important; /* Gunakan !important jika gambar masih bandel */
+    height: 60px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* Agar gambar tidak gepeng */
+}
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    height: 80px; /* Sedikit lebih kecil agar rapi */
+    background-color: #4ba5ff;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid black; /* Hanya border bawah */
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.namalogo {
+    margin-left: 10px;
+    color: white;
+    font-size: clamp(18px, 4vw, 24px); /* Ukuran teks fleksibel */
+}
+
+.profile {
+    margin-left: auto;
+    margin-right: 20px;
+    color: white;
+    font-size: 14px;
+    text-align: right;
+}
+
+/* LAYOUT UTAMA */
+.main-layout {
+    display: flex; /* Sidebar dan Content berdampingan */
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 200px;
+    background-color: #4ba5ff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid black;
+    flex-shrink: 0; /* Sidebar tidak boleh menyusut */
+}
+
+/* TOMBOL MENU */
+.menu-buku, .riwayat-buku {
+    width: 140px;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.menu-buku {
+    background-color: #96d1fc;
+    color: white;
+}
+
+.riwayat-buku {
+    background-color: white;
+    color: black;
+}
+
+.riwayat-buku:hover {
+    background-color: #96d1fc;
+    color: white;
+}
+
+/* CONTENT AREA */
+.content-wrapper {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Kotak biru di tengah */
+}
+
+.content {
+    background-color: #96d1fc;
+    padding: clamp(20px, 5vw, 40px);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 1000px; /* Pas di monitor, tidak melar */
+    height: fit-content;
+}
+
+/* SECTION BUKU */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+input {
+    width: clamp(150px, 30%, 250px);
+    height: 35px;
+    padding: 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    outline: none;
+}
+
+/* CAROUSEL BUKU */
+.book-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    
+    /* Carousel Logic */
+    display: flex;
+    overflow-x: auto; /* Aktifkan geser samping */
+    gap: 15px;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none; /* Sembunyikan scrollbar IE */
+    scrollbar-width: none;    /* Sembunyikan scrollbar Firefox */
+}
+
+.book-container::-webkit-scrollbar {
+    display: none; /* Sembunyikan scrollbar Chrome/Safari */
+}
+
+.book {
+    min-width: 110px;
+    height: 150px;
+    background-color: black;
+    border-radius: 15px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+/* RESPONSIVE UNTUK HP */
+@media (max-width: 768px) {
+    .main-layout {
+        flex-direction: column; /* Sidebar pindah ke atas */
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        border-right: none;
+        border-bottom: 1px solid black;
+    }
+    .menu-buku, .riwayat-buku {
+        margin-top: 0;
+    }
+}

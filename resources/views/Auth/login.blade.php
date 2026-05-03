@@ -16,14 +16,18 @@
         </div>
 
         <div class="form-group">
-            <input type="text" placeholder="Username...">
-            <input type="password" placeholder="Password...">
+            <form action="/login" method="GET">
+            @csrf
+            <input type="text" name="Username" id="username" placeholder="Username...">
+            <br>
+            <input type="password" name="Password" id="password" placeholder="Password...">
+            <br>
+            <button class="login-btn" type="">Login</button>
+            </form>
         </div>
 
-        <button class="login-btn">Login</button>
-
         <div class="register-text">
-            Belum Punya Akun? <a href="#">Daftar Sekarang</a>
+            Belum Punya Akun? <a href="/register">Daftar Sekarang</a>
         </div>
 
     </div>

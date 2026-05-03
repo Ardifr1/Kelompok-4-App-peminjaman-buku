@@ -1,109 +1,174 @@
-*{
+/* RESET DASAR */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.header{
+
+/* GLOBAL IMAGE SETTING */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* HEADER UTAMA */
+.header {
     width: 100%;
-    height: 90px;
+    height: 80px;
     background-color: #4ba5ff;
     display: flex;
     align-items: center;
-    padding: 0 20px;
-    border: 1px  solid black;
-    position: relative;
-}
-.namalogo{
-    margin-left: 10px;
-    color: white;
-    font-size: 24px;
     justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid black;
 }
-.profile{
-    margin-left: auto;
-    margin-right: 20px;
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    gap: 15px;
+}
+
+.logo-img {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.namalogo {
+    margin-left: 15px;
     color: white;
-    font-size: 15px;
+    font-size: clamp(16px, 3vw, 22px);
+    font-weight: bold;
 }
-.sidebar{
+
+.profile-info {
+    text-align: right;
+    color: white;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+/* LAYOUT UTAMA */
+.main-layout {
+    display: flex; 
+    min-height: calc(100vh - 80px);
+}
+
+/* SIDEBAR */
+.sidebar {
     width: 200px;
-    height: 120vh;
     background-color: #4ba5ff;
     padding: 20px;
-    position: absolute;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    z-index:100;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    border-right: 1px  solid black;
+    border-right: 1px solid black;
+    flex-shrink: 0;
 }
-.menu-buku {
-    width: 120px;
-    height: auto;
-    background-color: #96d1fc;
-    color: rgb(255, 255, 255);
-    padding: 10px 20px;
-    border-radius: 20px; /* bikin oval */
+
+.menu-item {
+    width: 140px;
+    padding: 10px;
+    border-radius: 20px;
     text-decoration: none;
-    display: inline-block;
+    text-align: center;
     font-weight: 500;
-    box-shadow: 2px 6px 5px rgba(15, 15, 15, 0.1);
-    margin-top: 30px;
+    margin-top: 15px;
+    transition: 0.3s;
+    background-color: white;
+    color: black;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
 }
-.riwayat-buku {
-    width: 120px;
-    height: auto;
-    color: black; 
-    padding: 10px 20px;
-    border-radius: 20px; /* bikin oval */
-    text-decoration: none;
-    display: inline-block;
-    font-weight: 500;
-    box-shadow: 2px 6px 5px rgba(15, 15, 15, 0.1);
-    margin-top: 30px;
-    transition: .3s;
-}
-.riwayat-buku:hover,.riwayat-buku:active {
+
+.menu-item.active {
     background-color: #96d1fc;
     color: white;
 }
-.content{
-    background-color: #96d1fc;
-    margin-left: 300px;
-    margin-top: 50px;
-    padding: 50px;
-    border-radius: 20px;
-    width: 800px;
-}
-.section-header{
+
+/* CONTENT AREA */
+.content-wrapper {
+    flex-grow: 1;
+    padding: 40px 20px;
     display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.blue-container {
+    background-color: #96d1fc;
+    padding: 30px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 950px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+/* SECTION BUKU */
+.book-section {
+    width: 100%;
+}
+
+/* Spasi antara Buku Umum dan Buku Pelajaran */
+.lesson-section {
+    margin-top: 50px; 
+}
+
+/* Header di dalam kotak biru (Judul & Lihat Semua) */
+.section-header {
+    display: flex;
     justify-content: space-between;
-    
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 0 5px;
 }
-input {
-    
-  width: 210px;        /* lebar input */
-  height: 40px;        /* tinggi input */
-  padding: 0 15px;    /* jarak dalam */
-  border: 1px solid #ccc;
-  border-radius: 999px; 
-  outline: none;
+
+.category-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #000;
 }
-.book-container{
+
+.see-all {
+    font-size: 14px;
+    color: #004085;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.see-all:hover {
+    text-decoration: underline;
+}
+
+/* CAROUSEL BUKU */
+.book-container {
     background-color: white;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    width: 95%;
+    display: flex;
+    overflow-x: auto; /* Aktifkan geser samping */
+    gap: 15px;
+    scrollbar-width: none; /* Sembunyikan scrollbar Firefox */
+    -ms-overflow-style: none; /* Sembunyikan scrollbar IE/Edge */
 }
+
+.book-container::-webkit-scrollbar {
+    display: none; /* Sembunyikan scrollbar Chrome/Safari */
+}
+
 .book {
-    width: 110px;
+    min-width: 110px;
     height: 150px;
-    background-color: black;
-    border-radius: 15px;
-    display: inline-flex;
-    margin: 20px;
+    background-color: #000;
+    border-radius: 12px;
+    flex-shrink: 0; /* Mencegah buku mengecil/gepeng */
 }
