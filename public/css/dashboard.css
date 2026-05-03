@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    width: 100%;
+    height: 90px;
+    background-color: #4ba5ff;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border: 1px  solid black;
+    position: relative;
+}
+.namalogo{
+    margin-left: 10px;
+    color: white;
+    font-size: 24px;
+    justify-content: space-between;
+}
+.profile{
+    margin-left: auto;
+    margin-right: 20px;
+    color: white;
+    font-size: 15px;
+}
+.sidebar{
+    width: 200px;
+    height: 120vh;
+    background-color: #4ba5ff;
+    padding: 20px;
+    position: absolute;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index:100;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px  solid black;
+}
+.menu-buku {
+    width: 120px;
+    height: auto;
+    background-color: #96d1fc;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius: 20px; /* bikin oval */
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+    box-shadow: 2px 6px 5px rgba(15, 15, 15, 0.1);
+    margin-top: 30px;
+}
+.riwayat-buku {
+    width: 120px;
+    height: auto;
+    color: black; 
+    padding: 10px 20px;
+    border-radius: 20px; /* bikin oval */
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+    box-shadow: 2px 6px 5px rgba(15, 15, 15, 0.1);
+    margin-top: 30px;
+    transition: .3s;
+}
+.riwayat-buku:hover,.riwayat-buku:active {
+    background-color: #96d1fc;
+    color: white;
+}
+.content{
+    background-color: #96d1fc;
+    margin-left: 300px;
+    margin-top: 50px;
+    padding: 50px;
+    border-radius: 20px;
+    width: 800px;
+}
+.section-header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    
+}
+input {
+    
+  width: 210px;        /* lebar input */
+  height: 40px;        /* tinggi input */
+  padding: 0 15px;    /* jarak dalam */
+  border: 1px solid #ccc;
+  border-radius: 999px; 
+  outline: none;
+}
+.book-container{
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 95%;
+}
+.book {
+    width: 110px;
+    height: 150px;
+    background-color: black;
+    border-radius: 15px;
+    display: inline-flex;
+    margin: 20px;
+}
