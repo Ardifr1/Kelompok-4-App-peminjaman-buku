@@ -24,4 +24,5 @@ Route::get('/kelolaAnggota', [KAnggotaController::class, 'index']);
 // Route Autentikasi
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/register', [RegisterController::class,'index']);
-Route::get('/dashboard', [DashboardController::class, 'index']); 
+Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboardAdmin', [DashboardController::class, 'dashboardAdmin']);

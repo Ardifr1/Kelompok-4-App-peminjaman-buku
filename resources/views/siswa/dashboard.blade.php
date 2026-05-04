@@ -29,6 +29,7 @@
 
         <main class="content-wrapper">
             <div class="blue-container">
+                
                 <!-- SECTION BUKU UMUM -->
                 <section class="book-section">
                     <div class="section-header">
