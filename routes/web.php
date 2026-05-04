@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PeminjamanController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
