@@ -29,11 +29,10 @@
 
         <main class="content-wrapper">
             <div class="blue-container">
-                <!-- SECTION BUKU UMUM -->
                 <section class="book-section">
                     <div class="section-header">
-                        <span class="category-title">Buku Umum :</span>
-                        <a href="#" class="see-all">Lihat Semua</a>
+                        <span class="category-title">Buku Pelajaran :</span>
+                        <a href="/allPelajaran" class="see-all">Lihat Semua</a>
                     </div>
                     <div class="book-container">
                         <div class="book"></div>
@@ -43,12 +42,11 @@
                         <div class="book"></div>
                     </div>
                 </section>
-
-                <!-- SECTION BUKU PELAJARAN -->
+<br>
                 <section class="book-section lesson-section">
                     <div class="section-header">
-                        <span class="category-title">Buku Pelajaran :</span>
-                        <a href="#" class="see-all">Lihat Semua</a>
+                        <span class="category-title">Buku Umum :</span>
+                        <a href="/allUmum" class="see-all" style="color: white;">Lihat Semua</a>
                     </div>
                     <div class="book-container">
                         <div class="book"></div>

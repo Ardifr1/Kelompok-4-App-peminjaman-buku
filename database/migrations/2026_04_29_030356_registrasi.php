@@ -7,24 +7,23 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Jalankan migration untuk membuat tabel.
      */
     public function up(): void
     {
-        schema::create('Registrasi', function (blueprint $table) {
-          $table->id();
-          $table->string('NIS')->unique();
-          $table->string('Nama');
-          $table->string('Kelas');
-          $table->timestamps();
+        // Menggunakan Schema dengan huruf kapital
+        Schema::create('registrasi', function (Blueprint $table) {
+            $table->id();
+            $table->string('nis')->unique();
+            $table->string('nama');
+            $table->string('username');
+            $table->string('kelas');
+            $table->string('password');
+            $table->timestamps();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('registrasi');
     }
 };
