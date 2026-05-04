@@ -165,10 +165,4 @@ img {
     display: none; /* Sembunyikan scrollbar Chrome/Safari */
 }
 
-.book {
-    min-width: 110px;
-    height: 150px;
-    background-color: #000;
-    border-radius: 12px;
-    flex-shrink: 0; /* Mencegah buku mengecil/gepeng */
-}
+
