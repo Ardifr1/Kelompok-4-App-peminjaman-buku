@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahaputra Library - Dashboard</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+=======
+    <link rel="stylesheet" href="{{ asset('css/riwayat.css') }}">
+>>>>>>> front-end
 </head>
 <body>
     <header class="header">
@@ -32,6 +36,7 @@
                 <!-- SECTION BUKU UMUM -->
                 <section class="book-section">
                     <div class="section-header">
+<<<<<<< HEAD
                         <span class="category-title">Buku Umum :</span>
                         <a href="#" class="see-all">Lihat Semua</a>
                     </div>
@@ -52,6 +57,19 @@
                     </div>
                     <div class="book-container">
                       
+=======
+                        
+                    </div>
+                    <div class="book-container">
+                        <table border="2" class="riwayat"></table>
+                        <tr>
+                            <th>No</th>
+                            <th>Judul Buku</th>
+                            <th>Tanggal Pinjam</th>
+                            <th>Tanggal Kembali</th>
+                        </tr>
+                        </table>
+>>>>>>> front-end
                     </div>
                 </section>
             </div>

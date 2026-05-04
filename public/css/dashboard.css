@@ -82,10 +82,10 @@ img {
     text-align: center;
     font-weight: 500;
     margin-top: 15px;
-    transition: 0.3s;
     background-color: white;
     color: black;
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
+    transition: .3s;
 }
 
 .menu-item.active {

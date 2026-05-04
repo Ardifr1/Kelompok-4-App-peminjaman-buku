@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PeminjamanController;
+use App\Http\Controllers\RiwayatController;
 
 
 /*
@@ -26,3 +27,4 @@ Route::get('/kelolaAnggota', [KAnggotaController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/register', [RegisterController::class,'index']);
 Route::get('/dashboard', [DashboardController::class, 'index']); 
+Route::get('/riwayat', [RiwayatController::class, 'index']); 
