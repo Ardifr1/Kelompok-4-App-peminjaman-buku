@@ -3,12 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahaputra Library - Dashboard</title>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
-=======
+    <title>Mahaputra Library - Riwayat</title>
     <link rel="stylesheet" href="{{ asset('css/riwayat.css') }}">
->>>>>>> front-end
 </head>
 <body>
     <header class="header">
@@ -33,45 +29,28 @@
 
         <main class="content-wrapper">
             <div class="blue-container">
-                <!-- SECTION BUKU UMUM -->
-                <section class="book-section">
-                    <div class="section-header">
-<<<<<<< HEAD
-                        <span class="category-title">Buku Umum :</span>
-                        <a href="#" class="see-all">Lihat Semua</a>
-                    </div>
-                    <div class="book-container">
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
-                    </div>
-                </section>
-
-                <!-- SECTION BUKU PELAJARAN -->
-                <section class="book-section lesson-section">
-                    <div class="section-header">
-                        <span class="category-title">Buku Pelajaran :</span>
-                        <a href="#" class="see-all">Lihat Semua</a>
-                    </div>
-                    <div class="book-container">
-                      
-=======
-                        
-                    </div>
-                    <div class="book-container">
-                        <table border="2" class="riwayat"></table>
-                        <tr>
-                            <th>No</th>
-                            <th>Judul Buku</th>
-                            <th>Tanggal Pinjam</th>
-                            <th>Tanggal Kembali</th>
-                        </tr>
-                        </table>
->>>>>>> front-end
-                    </div>
-                </section>
+            <div class="book-container">
+                <table class="table-riwayat" border="1" cellpadding="10" cellspacing="0">
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Buku</th>
+                        <th>Tanggal Peminjaman</th>
+                        <th>Tanggal Kembali</th>
+                    </tr>
+                    <tr>
+                        <td>01</td>
+                        <td>aku bisa pasang kopling supra</td>
+                        <td>05/05/2026</td>
+                        <td>07/05/2026</td>
+                    </tr>
+                     <tr>
+                        <td>01</td>
+                        <td>aku bisa pasang kopling supra</td>
+                        <td>05/05/2026</td>
+                        <td>07/05/2026</td>
+                    </tr>
+                </table>
+            </div>
             </div>
         </main>
     </div>
