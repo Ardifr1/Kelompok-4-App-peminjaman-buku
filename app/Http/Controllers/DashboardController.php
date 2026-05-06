@@ -10,6 +10,12 @@ class DashboardController extends Controller
     {
         return view('siswa.dashboard');
     }
+
+    public function deskripsiBuku()
+    {
+        return view('siswa.deskripsiBuku');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
