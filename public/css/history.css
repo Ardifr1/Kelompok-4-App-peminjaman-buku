@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: #fff;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 200px;
+    background-color: #77a9d4;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ccc;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff; /* Header logo putih sesuai gambar */
+    height: 70px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo-img {
+    width: 35px;
+    margin-right: 8px;
+}
+
+.brand-name {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.brand-sub {
+    font-size: 12px;
+}
+
+.menu-section {
+    padding: 20px 10px;
+}
+
+.menu-label {
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+.nav-active-bg {
+    background: linear-gradient(to bottom, #9bc7eb, #77a9d4);
+    border-radius: 25px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #999;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-nav {
+    height: 70px;
+    background-color: #77a9d4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
+
+.user-info {
+    text-align: right;
+}
+
+.user-name {
+    display: block;
+    font-weight: bold;
+}
+
+.user-nisn {
+    font-size: 12px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* BLUE CARD & TABLE */
+.content-area {
+    padding: 50px;
+    flex-grow: 1;
+}
+
+.blue-card {
+    background-color: #77a9d4;
+    border-radius: 20px;
+    padding: 30px;
+    min-height: 80%;
+}
+
+.table-container {
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #555;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #77a9d4;
+    color: white;
+    padding: 12px;
+    border: 1px solid #555;
+    font-weight: normal;
+    text-align: center;
+}
+
+td {
+    padding: 12px;
+    border: 1px solid #555;
+    text-align: center;
+    background-color: white;
+}
