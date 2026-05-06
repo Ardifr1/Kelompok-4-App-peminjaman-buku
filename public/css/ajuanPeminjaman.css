@@ -1,0 +1,92 @@
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.btn-kembali {
+    color: #ff0000;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    top: 30px;
+    left: 40px;
+}
+
+.main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    background-color: #61a4d6;
+    width: 100%;
+    max-width: 450px;
+    padding: 50px 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.form-title {
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #d9d9d9;
+    font-size: 15px;
+    color: #333;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+.form-control::placeholder {
+    color: #777;
+}
+
+.form-control:focus {
+    outline: none;
+    background-color: #e5e5e5;
+}
+
+.row-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.row-bottom input[type="number"] {
+    flex: 0.4;
+}
+
+.btn-ajukan {
+    flex: 0.6;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}

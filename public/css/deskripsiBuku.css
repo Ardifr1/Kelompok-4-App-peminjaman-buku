@@ -1,0 +1,105 @@
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 40px 20px;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #61a4d6;
+    border: 3px solid #3c82c6;
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    max-width: 850px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.top-left {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-kembali {
+    background-color: #ff0000;
+}
+
+.stok-badge {
+    background-color: #f2c7cb;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.btn-ajukan {
+    background-color: #3cb44a;
+}
+
+.book-cover {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.book-cover img {
+    max-width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.book-details {
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.detail-row {
+    display: flex;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.detail-row:last-child {
+    margin-bottom: 0;
+}
+
+.detail-label {
+    width: 100px;
+    font-weight: 500;
+    color: #000;
+}
+
+.detail-value {
+    flex: 1;
+    color: #000;
+}

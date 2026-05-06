@@ -82,17 +82,10 @@ img {
     text-align: center;
     font-weight: 500;
     margin-top: 15px;
-<<<<<<< HEAD
     transition: 0.3s;
     background-color: white;
     color: black;
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
-=======
-    background-color: white;
-    color: black;
-    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
-    transition: .3s;
->>>>>>> front-end
 }
 
 .menu-item.active {
@@ -120,66 +113,19 @@ img {
     flex-direction: column;
 }
 
-/* SECTION BUKU */
-.book-section {
-    width: 100%;
-}
 
-/* Spasi antara Buku Umum dan Buku Pelajaran */
-.lesson-section {
-    margin-top: 50px; 
-}
 
-/* Header di dalam kotak biru (Judul & Lihat Semua) */
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    padding: 0 5px;
-}
 
-.category-title {
-    font-weight: bold;
-    font-size: 18px;
-    color: #000;
-}
-
-.see-all {
-    font-size: 14px;
-    color: #004085;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.see-all:hover {
-    text-decoration: underline;
-}
-
-/* CAROUSEL BUKU */
 .book-container {
     background-color: white;
     padding: 20px;
-    border-radius: 20px;
-    display: flex;
-    overflow-x: auto; /* Aktifkan geser samping */
-    gap: 15px;
-    scrollbar-width: none; /* Sembunyikan scrollbar Firefox */
-    -ms-overflow-style: none; /* Sembunyikan scrollbar IE/Edge */
+    border-radius: 15px;
+}
+.table-riwayat {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
 }
 
-.book-container::-webkit-scrollbar {
-    display: none; /* Sembunyikan scrollbar Chrome/Safari */
-}
 
-<<<<<<< HEAD
-.book {
-    min-width: 110px;
-    height: 150px;
-    background-color: #000;
-    border-radius: 12px;
-    flex-shrink: 0; /* Mencegah buku mengecil/gepeng */
-}
-=======
 
->>>>>>> front-end
