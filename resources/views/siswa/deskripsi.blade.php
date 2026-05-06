@@ -22,7 +22,7 @@
 
             <div class="cover-wrapper">
                 <div class="image-frame">
-                    <img src="{{ asset('img/cover-matematika.jpg') }}" alt="Cover Buku">
+                    <img src="https://buku.kemendikdasmen.go.id/katalog/Matematika-untuk-SMPMTs-Kelas-VII" alt="Cover Buku">
                 </div>
             </div>
 
