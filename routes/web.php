@@ -7,7 +7,10 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\RiwayatController;
-
+use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\KelolaAnggotaController;
+use App\Http\Controllers\konfirmasiController;
+use App\Http\Controllers\tambahbukuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +35,10 @@ Route::get('/dashboardAdmin', [DashboardController::class, 'dashboardAdmin']);
 // Route Fitur Siswa 
 Route::get('/deskripsiBuku', [DashboardController::class, 'deskripsiBuku']);
 Route::get('/ajuanPeminjaman', [PeminjamanController::class, 'create']);
+Route::get('/riwayat', [RiwayatController::class, 'index']);
+
+// Route Fitur Admin
+Route::get('/data', [AdminDashboardController::class, 'index']);
+Route::get('/anggota', [KelolaAnggotaController::class, 'index']);
+Route::get('/konfirmasi', [konfirmasiController::class, 'index']);
+Route::get('/tambahbuku', [tambahbukuController::class, 'index']);
