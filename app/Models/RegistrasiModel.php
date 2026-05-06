@@ -8,5 +8,5 @@ class RegistrasiModel extends Model
 {
     protected $table = 'registrasi'; 
 
-    protected $fillable = ['NIS', 'Nama', 'Kelas'];
+    protected $fillable = ['nis', 'username', 'kelas', 'password'];
 }

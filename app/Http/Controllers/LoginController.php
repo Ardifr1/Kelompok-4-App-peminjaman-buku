@@ -12,13 +12,11 @@ class LoginController extends Controller
     }
     public function authenticate(Request $request)
     {
-       // 1. Validasi input menggunakan 'username' bukan 'email'
     $credentials = $request->validate([
         'username' => ['required', 'string'], 
         'password' => ['required'],
     ]);
 
-    // 2. Auth::attempt akan otomatis mencari kolom 'username' di database
     if (Auth::attempt($credentials)) {
         $request->session()->regenerate();
         return redirect()->intended('dashboard');
