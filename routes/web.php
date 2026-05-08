@@ -29,6 +29,6 @@ Route::get('/register', [RegisterController::class,'index']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/dashboardAdmin', [DashboardController::class, 'dashboardAdmin']);
 
-// Route Fitur Siswa 
+// Route Fitur Siswa
 Route::get('/deskripsiBuku', [DashboardController::class, 'deskripsiBuku']);
 Route::get('/ajuanPeminjaman', [PeminjamanController::class, 'create']);
