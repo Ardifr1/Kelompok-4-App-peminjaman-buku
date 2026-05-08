@@ -11,7 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Menggunakan Schema dengan huruf kapital
         Schema::create('registrasi', function (Blueprint $table) {
             $table->id();
             $table->string('nis')->unique();

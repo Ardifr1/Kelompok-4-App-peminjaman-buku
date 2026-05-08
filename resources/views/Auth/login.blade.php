@@ -16,15 +16,24 @@
         </div>
 
         <div class="form-group">
-            <form action="/login" method="GET">
-            @csrf
-            <input type="text" name="Username" id="username" placeholder="Username...">
-            <br>
-            <input type="password" name="Password" id="password" placeholder="Password...">
-            <br>
-            <button class="login-btn" type="">Login</button>
-            </form>
-        </div>
+    <form action="/login" method="POST">
+        @csrf
+        
+        <!-- Input Username -->
+        <input type="text" name="username" id="username" placeholder="Username..." value="{{ old('username') }}" required>
+        @error('username')
+            <div style="color: red;">{{ $message }}</div>
+        @enderror
+        <br>
+
+        <!-- Input Password -->
+        <input type="password" name="password" id="password" placeholder="Password..." required>
+        <br>
+
+            <!-- Button Login -->
+            <button class="login-btn" type="submit">Login</button>
+        </form>
+    </div>
 
         <div class="register-text">
             Belum Punya Akun? <a href="/register">Daftar Sekarang</a>
