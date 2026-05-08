@@ -1,0 +1,121 @@
+/* Sidebar Styles */
+.sidebar-container {
+    width: 260px;
+    background-color: #7dd3fc; /* Light Blue */
+    display: flex;
+    flex-direction: column;
+    color: #0c4a6e;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.logo-placeholder {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nav-item {
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.nav-item.active {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-item:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-footer {
+    padding: 2rem;
+}
+
+.logout-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Topbar Styles */
+.topbar {
+    height: 60px;
+    background-color: #7dd3fc;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 2rem;
+    color: #0c4a6e;
+}
+
+.profile-circle {
+    width: 35px;
+    height: 35px;
+    background-color: #cbd5e1;
+    border-radius: 50%;
+}
+
+/* Content Styles */
+.content-wrapper {
+    padding: 2.5rem;
+    background-color: #f8fafc;
+    flex: 1;
+}
+
+.blue-card-container {
+    background-color: #60a5fa; /* Medium Blue */
+    border-radius: 1.5rem;
+    padding: 2rem;
+    min-height: 80vh;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.btn-tambah {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.4rem 1.2rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    backdrop-filter: blur(4px);
+}
+
+.grid-books {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.book-card-placeholder {
+    background-color: #1e293b; /* Dark Slate / Blackish */
+    aspect-ratio: 3/4;
+    border-radius: 1rem;
+}
