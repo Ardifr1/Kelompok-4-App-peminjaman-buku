@@ -1,0 +1,177 @@
+/* RESET DASAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* GLOBAL IMAGE SETTING */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* HEADER UTAMA */
+.header {
+    width: 100%;
+    height: 80px;
+    background-color: #4ba5ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid black;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    gap: 15px;
+}
+
+.logo-img {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.namalogo {
+    margin-left: 15px;
+    color: white;
+    font-size: clamp(16px, 3vw, 22px);
+    font-weight: bold;
+
+}
+.panel {
+    color: white;
+    font-size: clamp(12px, 2.5vw, 18px);
+    font-weight: 500;
+
+}
+.profile-info {
+    text-align: right;
+    color: white;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+/* LAYOUT UTAMA */
+.main-layout {
+    display: flex; 
+    min-height: calc(100vh - 80px);
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 200px;
+    background-color: #4ba5ff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid black;
+    flex-shrink: 0;
+}
+
+.menu-item {
+    width: 150px;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 15px;
+    background-color: white;
+    color: black;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.6);
+    transition: .3s;
+}
+.keluar{
+    width: 150px;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    margin-top: auto; /* Posisikan di bagian bawah */
+    background-color: #ff4b5c;
+    color: white;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.6);
+    transition: .3s;
+}
+
+.menu-item.active {
+    background-color: #96d1fc;
+    color: white;
+}
+
+/* CONTENT AREA */
+.content-wrapper {
+    flex-grow: 1;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.blue-container {
+    background-color: #96d1fc;
+    padding: 30px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 950px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* tabel kelola */
+
+.tambah{
+    display: inline-block;
+    padding: 16px 15px;
+    background-color: #0080ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: .3s;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.6);
+}
+.font{
+    font-weight: bold;
+    font-size: 30px;
+    color: #000000;
+}
+.tabel-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    overflow-x: auto; /* Aktifkan geser samping */
+    gap: 15px;
+    scrollbar-width: none; /* Sembunyikan scrollbar Firefox */
+    -ms-overflow-style: none; /* Sembunyikan scrollbar IE/Edge */
+}
+
+.tabel-container::-webkit-scrollbar {
+    display: none; /* Sembunyikan scrollbar Chrome/Safari */
+}
+.tabel-buku{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
