@@ -16,13 +16,18 @@
         </div>
 
         <div class="form-group">
-            <form action="/login" method="GET">
+            <form action="/login" method="POST">
             @csrf
-            <input type="text" name="Username" id="username" placeholder="Username...">
+            <input type="text" name="username" id="username" placeholder="Username..." value="{{ old('username') }}">
             <br>
-            <input type="password" name="Password" id="password" placeholder="Password...">
+            <input type="password" name="password" id="password" placeholder="Password...">
+            @if ($errors->any())
+                <div style="color: red; margin-top: 5px; font-size: 14px;">
+                    {{ $errors->first() }}
+                </div>
+            @endif
             <br>
-            <button class="login-btn" type="">Login</button>
+            <button class="login-btn" type="submit">Login</button>
             </form>
         </div>
 
