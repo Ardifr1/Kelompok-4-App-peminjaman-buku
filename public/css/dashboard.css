@@ -160,7 +160,7 @@ img {
     width: 500px;
     height: 40px;
     padding: 0 15px;
-    border: 1px solid #ccc;
+    border: 2px solid #949393;
     border-radius: 999px;
     outline: none;
 }
@@ -169,7 +169,7 @@ img {
     width: 100px;
     height: 40px;
     padding: 0 15px;
-    border: 1px solid #ccc;
+    border: 2px solid #286651;
     border-radius: 999px;
     outline: none;
     background-color: #52eeba;
