@@ -131,21 +131,19 @@ img {
     display: flex;
     flex-direction: column;
 }
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 
 /* tabel kelola */
 
-.tambah{
-    display: inline-block;
-    padding: 16px 15px;
-    background-color: #0080ff;
-    color: white;
-    text-decoration: none;
-    border-radius: 20px;
-    font-weight: 500;
-    transition: .3s;
-    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.6);
-    margin-left: 720px;
+.font{
+    font-weight: bold;
+    font-size: 30px;
+    color: #000000;
 }
 .tabel-container {
     background-color: white;
@@ -165,4 +163,13 @@ img {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
+}
+th{
+    background-color: #0080ff;
+    color: black;
+    padding: 10px;
+    
+}
+td{
+    padding: 10px;
 }

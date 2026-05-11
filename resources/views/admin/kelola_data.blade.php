@@ -25,9 +25,9 @@
 
     <div class="main-layout">
         <aside class="sidebar">
-            <a href="#" class="menu-item active">Kelola data buku</a>
-            <a href="#" class="menu-item">Kelola Anggota</a>
-            <a href="#" class="menu-item">Transaksi</a>
+            <a href="/data" class="menu-item active">Kelola data buku</a>
+            <a href="/anggota" class="menu-item">Kelola Anggota</a>
+            <a href="/transaksi" class="menu-item">Transaksi</a>
             <a href="#" class="keluar"><i class="fa-solid fa-right-from-bracket"></i> Keluar</a>
 
         </aside>
