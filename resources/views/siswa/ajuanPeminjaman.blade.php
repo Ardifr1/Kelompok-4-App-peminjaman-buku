@@ -13,14 +13,11 @@
     <a href="/deskripsiBuku" class="btn-kembali">Kembali</a>
     <div class="main-container">
         <div class="form-container">
-            <div class="form-title">Isi kolom di bawah</div>
+            <div class="form-title">Isi Form Pengajuan</div>
 
             <form action="#" method="GET">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Nama Peminjam" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Kelas" required>
+                    <input type="text" class="form-control" placeholder="Nama Buku" required>
                 </div>
                 <div class="form-group">
                     <input type="datetime-local" class="form-control" required title="Tanggal meminjam" placeholder="Tanggal meminjam">

@@ -42,6 +42,9 @@
                         <div class="book"></div>
                         <div class="book"></div>
                         <div class="book"></div>
+                        <div class="book"></div>
+                        <div class="book"></div>
+                        <div class="book"></div>
                     </div>
                 </section>
 <br>
@@ -51,6 +54,11 @@
                         <a href="/allUmum" class="see-all" style="color: white;">Lihat Semua</a>
                     </div>
                     <div class="book-container">
+                        <div class="book"></div>
+                        <div class="book"></div>
+                        <div class="book"></div>
+                        <div class="book"></div>
+                        <div class="book"></div>
                         <div class="book"></div>
                         <div class="book"></div>
                         <div class="book"></div>

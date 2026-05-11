@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Akun</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <style>
         /* Custom styling untuk efek liquid glass yang lebih halus */
         .glass-card {
