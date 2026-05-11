@@ -29,24 +29,28 @@
                         <th>NIS</th>
                         <th>konfirmasi</th>
                         </tr>
+                        @forelse($pendingUsers as $user)
                         <tr>
-                            <td>adalah pokonya</td>
-                            <td>11</td>
-                            <td>123123123</td>
-                            <td>
-                                <a href="#" class="tolak"><i class="fa-solid fa-xmark"></i>tolak</a>
-                                <a href="#" class="konfirmasi"><i class="fa-solid fa-check"></i>konfirmasi </a>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->kelas }}</td>
+                            <td>{{ $user->nis }}</td>
+                            <td style="display: flex; gap: 10px; justify-content: center;">
+                                <form action="{{ route('konfirmasi.reject', $user->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menolak dan menghapus akun ini?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="tolak" style="border: none; cursor: pointer; padding: 5px 10px;"><i class="fa-solid fa-xmark"></i> tolak</button>
+                                </form>
+                                <form action="{{ route('konfirmasi.approve', $user->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menyetujui akun ini?');">
+                                    @csrf
+                                    <button type="submit" class="konfirmasi" style="border: none; cursor: pointer; padding: 5px 10px;"><i class="fa-solid fa-check"></i> konfirmasi</button>
+                                </form>
                             </td>
                         </tr>
+                        @empty
                         <tr>
-                            <td>adalah pokonya</td>
-                            <td>11</td>
-                            <td>123123123</td>
-                            <td>
-                                <a href="#" class="tolak"><i class="fa-solid fa-xmark"></i>tolak</a>
-                                <a href="#" class="konfirmasi"><i class="fa-solid fa-check"></i>konfirmasi </a>
-                            </td>
+                            <td colspan="4" style="text-align: center;">Tidak ada anggota yang menunggu konfirmasi.</td>
                         </tr>
+                        @endforelse
                         </table>
                     </div>
                 </section>

@@ -14,17 +14,17 @@
         </div>
         <div class="header-right">
             <div class="profile-info">
-                <p>Raiky Adila</p>
-                <p>1234567890</p>
+                <p>{{ Auth::user()->name }}</p>
+                <p>{{ Auth::user()->nis }}</p>
             </div>
-            <img src="{{ asset('gambar/logo peminjaman buku.jpg') }}" class="logo-img">
+            <img src="{{ asset('gambar/User.jpeg') }}" class="logo-img">
         </div>
     </header>
 
     <div class="main-layout">
         <aside class="sidebar">
-            <a href="#" class="menu-item active">Menu Buku</a>
-            <a href="#" class="menu-item">Riwayat</a>
+            <a href="/dashboard" class="menu-item active">Menu Buku</a>
+            <a href="/riwayat" class="menu-item">Riwayat</a>
         </aside>
 
         <main class="content-wrapper">

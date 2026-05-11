@@ -14,10 +14,10 @@
         </div>
         <div class="header-right">
             <div class="profile-info">
-                <p>Raiky Adila</p>
-                <p>1234567890</p>
+                <p>{{ Auth::user()->name }}</p>
+                <p>{{ Auth::user()->nis }}</p>
             </div>
-            <img src="{{ asset('gambar/logo peminjaman buku.jpg') }}" class="logo-img">
+            <img src="{{ asset('gambar/User.jpeg') }}" class="logo-img">
         </div>
     </header>
 
@@ -30,7 +30,7 @@
         <main class="content-wrapper">
             <div class="blue-container">
 
-                <!-- SECTION BUKU UMUM -->
+                <!-- SECTION BUKU PELAJARAN -->
                 <section class="book-section">
                     <div class="section-header">
                         <span class="category-title">Buku Pelajaran :</span>

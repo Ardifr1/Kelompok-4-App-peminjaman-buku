@@ -42,7 +42,10 @@
                 <input type="text" name="nis" placeholder="Nis" class="input-field w-full px-5 py-3 focus:outline-none placeholder-gray-500 text-lg">
             </div>
             <div>
-                <input type="text" name="nama" placeholder="Nama" class="input-field w-full px-5 py-3 focus:outline-none placeholder-gray-500 text-lg">
+                <input type="text" name="name" placeholder="Nama" class="input-field w-full px-5 py-3 focus:outline-none placeholder-gray-500 text-lg">
+            </div>
+            <div>
+                <input type="text" name="username" placeholder="Username" class="input-field w-full px-5 py-3 focus:outline-none placeholder-gray-500 text-lg">
             </div>
             <div>
                 <select name="kelas" placeholder="Pilih Kelas" class="input-field w-full px-5 py-3 focus:outline-none text-gray-700 text-lg appearance-none cursor-pointer">

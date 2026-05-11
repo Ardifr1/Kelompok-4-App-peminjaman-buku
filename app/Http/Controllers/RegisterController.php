@@ -28,6 +28,7 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         $validated = $request->validate([
             'nis' => ['required', 'string', 'max:255', 'unique:registrasi,nis'],
             'nama' => ['required', 'string', 'max:255'],
@@ -46,6 +47,23 @@ class RegisterController extends Controller
         ]);
 
         return redirect('/login')->with('success', 'Registrasi berhasil. Silakan login.');
+=======
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'username' => 'required|min:3|max:255|unique:users',
+            'nis' => 'required|max:255',
+            'kelas' => 'required|max:255',
+            'password' => 'required|min:5|max:255'
+        ]);
+
+        $validatedData['password'] = \Illuminate\Support\Facades\Hash::make($validatedData['password']);
+        $validatedData['role'] = 'siswa';
+        $validatedData['status'] = 'pending';
+
+        \App\Models\User::create($validatedData);
+
+        return redirect('/login')->with('success', 'Registrasi berhasil! Silakan tunggu admin untuk mengonfirmasi akun Anda.');
+>>>>>>> ad1775a3879fcf3608b04d310b12fe1642f2a0b3
     }
 
     /**

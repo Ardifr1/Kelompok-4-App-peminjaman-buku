@@ -20,6 +20,7 @@ class LoginController extends Controller
             'password' => ['required'],
         ]);
 
+<<<<<<< HEAD
         // 2. Proses Autentikasi
         if (Auth::guard('registrasi')->attempt($credentials)) {
             $request->session()->regenerate();
@@ -38,6 +39,26 @@ class LoginController extends Controller
         return back()->withErrors([
             'username' => 'Username atau password yang Anda masukkan salah.',
         ])->onlyInput('username');
+=======
+    if (Auth::attempt($credentials)) {
+        $user = Auth::user();
+
+        if ($user->status === 'pending') {
+            Auth::logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+            return back()->withErrors([
+                'username' => 'Akun Anda belum dikonfirmasi oleh Admin. Silakan tunggu.',
+            ])->onlyInput('username');
+        }
+
+        $request->session()->regenerate();
+        if ($user->role === 'admin') {
+            return redirect()->intended('dashboardAdmin');
+        } else {
+            return redirect()->intended('dashboard');
+        }
+>>>>>>> ad1775a3879fcf3608b04d310b12fe1642f2a0b3
     }
 
     public function logout(Request $request)
