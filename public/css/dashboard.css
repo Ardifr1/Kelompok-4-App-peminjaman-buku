@@ -25,7 +25,8 @@ img {
     border-bottom: 1px solid black;
 }
 
-.header-left, .header-right {
+.header-left,
+.header-right {
     display: flex;
     align-items: center;
 }
@@ -58,7 +59,7 @@ img {
 
 /* LAYOUT UTAMA */
 .main-layout {
-    display: flex; 
+    display: flex;
     min-height: calc(100vh - 80px);
 }
 
@@ -120,7 +121,7 @@ img {
 
 /* Spasi antara Buku Umum dan Buku Pelajaran */
 .lesson-section {
-    margin-top: 50px; 
+    margin-top: 50px;
 }
 
 /* Header di dalam kotak biru (Judul & Lihat Semua) */
@@ -149,20 +150,54 @@ img {
     text-decoration: underline;
 }
 
+/* Search */
+.search-section {
+    margin-bottom: 25px;
+}
+
+.search-input {
+    align-content: center;
+    width: 500px;
+    height: 40px;
+    padding: 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    outline: none;
+}
+
+.search-btn {
+    width: 100px;
+    height: 40px;
+    padding: 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    outline: none;
+    background-color: #52eeba;
+}
+
+.search-btn:hover {
+    background-color: #48cca0;
+    cursor: pointer;
+}
+
 /* CAROUSEL BUKU */
 .book-container {
     background-color: white;
     padding: 20px;
     border-radius: 20px;
     display: flex;
-    overflow-x: auto; /* Aktifkan geser samping */
+    overflow-x: auto;
+    /* Aktifkan geser samping */
     gap: 15px;
-    scrollbar-width: none; /* Sembunyikan scrollbar Firefox */
-    -ms-overflow-style: none; /* Sembunyikan scrollbar IE/Edge */
+    scrollbar-width: none;
+    /* Sembunyikan scrollbar Firefox */
+    -ms-overflow-style: none;
+    /* Sembunyikan scrollbar IE/Edge */
 }
 
 .book-container::-webkit-scrollbar {
-    display: none; /* Sembunyikan scrollbar Chrome/Safari */
+    display: none;
+    /* Sembunyikan scrollbar Chrome/Safari */
 }
 
 .book {
@@ -170,5 +205,6 @@ img {
     height: 150px;
     background-color: #000;
     border-radius: 12px;
-    flex-shrink: 0; /* Mencegah buku mengecil/gepeng */
+    flex-shrink: 0;
+    /* Mencegah buku mengecil/gepeng */
 }

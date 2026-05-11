@@ -29,12 +29,19 @@
 
         <main class="content-wrapper">
             <div class="blue-container">
+                <section class="search-section">
+                    <div class="search-bar" style="display:flex;justify-content:center;">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Cari buku..." class="search-input" name="search">
+                        <button type="submit" class="search-btn">Cari</button>
+                    </div>
 
+                </section>
                 <!-- SECTION BUKU PELAJARAN -->
                 <section class="book-section">
                     <div class="section-header">
                         <span class="category-title">Buku Pelajaran :</span>
-                        <a href="/allPelajaran" class="see-all">Lihat Semua</a>
+                        <!-- <a href="/allPelajaran" class="see-all">Lihat Semua</a> -->
                     </div>
                     <div class="book-container">
                         <div class="book"></div>
@@ -51,7 +58,7 @@
                 <section class="book-section lesson-section">
                     <div class="section-header">
                         <span class="category-title">Buku Umum :</span>
-                        <a href="/allUmum" class="see-all" style="color: white;">Lihat Semua</a>
+                        <!-- <a href="/allUmum" class="see-all" style="color: white;">Lihat Semua</a> -->
                     </div>
                     <div class="book-container">
                         <div class="book"></div>

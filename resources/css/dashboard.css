@@ -163,6 +163,8 @@ input {
     scroll-snap-align: start;
 }
 
+
+
 /* RESPONSIVE UNTUK HP */
 @media (max-width: 768px) {
     .main-layout {
