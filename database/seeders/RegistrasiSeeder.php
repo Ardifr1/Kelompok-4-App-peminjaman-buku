@@ -14,20 +14,22 @@ class RegistrasiSeeder extends Seeder
     public function run(): void
     {
         RegistrasiModel::create([
-        'nis'      => '12345',
-        'nama'     => 'Budi Santoso',
-        'username' => 'Budi Sentosa',
-        'kelas'    => 'XII PPLG 1',   
-        'password' => Hash::make('password123'),
-    ]);
+            'nis'      => '12345',
+            'nama'     => 'Budi Santoso',
+            'username' => 'budi.admin',
+            'kelas'    => 'XII PPLG 1',
+            'role'     => 'Admin',
+            'password' => Hash::make('password123'),
+        ]);
 
-    // Data kedua
-    RegistrasiModel::create([
-        'nis'      => '12346',
-        'nama'     => 'Abhi Mulki A',
-        'username' => 'Abhi Developer',
-        'kelas'    => 'XII PPLG 1',
-        'password' => Hash::make('rahasia123'),
-    ]);
+        RegistrasiModel::create([
+            'nis'      => '12346',
+            'nama'     => 'Abhi Mulki A',
+            'username' => 'abhi.siswa',
+            'kelas'    => 'XII PPLG 1',
+            'role'     => 'Siswa',
+            'password' => Hash::make('rahasia123'),
+        ]);
+
     }
 }

@@ -36,7 +36,7 @@
 
         <h2 class="text-center text-3xl font-semibold mb-8 tracking-wide">Daftar</h2>
 
-        <form action="#" method="POST" class="space-y-4">
+        <form action="/register" method="POST" class="space-y-4">
             @csrf
             <div>
                 <input type="text" name="nis" placeholder="Nis" class="input-field w-full px-5 py-3 focus:outline-none placeholder-gray-500 text-lg">

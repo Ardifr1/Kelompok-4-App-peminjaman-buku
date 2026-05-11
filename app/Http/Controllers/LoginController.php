@@ -21,19 +21,16 @@ class LoginController extends Controller
         ]);
 
         // 2. Proses Autentikasi
-        if (Auth::attempt($credentials)) {
+        if (Auth::guard('registrasi')->attempt($credentials)) {
             $request->session()->regenerate();
 
             // Ambil data user yang sedang login
-            $user = Auth::user();
+            $user = Auth::guard('registrasi')->user();
 
-            // 3. Pengalihan berdasarkan Jabatan
-            // Pastikan kolom di database kamu bernama 'jabatan'
-            if ($user->jabatan === 'Admin') {
+            if (($user->role ?? 'Siswa') === 'Admin') {
                 return redirect()->intended('/dashboardAdmin');
             }
 
-            // Jika bukan Admin, ke dashboard biasa
             return redirect()->intended('/dashboard');
         }
 
@@ -45,7 +42,7 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        Auth::guard('registrasi')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/login');

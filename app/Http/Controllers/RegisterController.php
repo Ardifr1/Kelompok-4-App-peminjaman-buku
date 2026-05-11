@@ -28,7 +28,24 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nis' => ['required', 'string', 'max:255', 'unique:registrasi,nis'],
+            'nama' => ['required', 'string', 'max:255'],
+            'kelas' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255', 'unique:registrasi,username'],
+            'password' => ['required', 'string', 'min:6'],
+        ]);
+
+        $user = RegistrasiModel::create([
+            'nis' => $validated['nis'],
+            'nama' => $validated['nama'],
+            'kelas' => $validated['kelas'],
+            'username' => $validated['username'],
+            'password' => \Illuminate\Support\Facades\Hash::make($validated['password']),
+            'role' => 'Siswa',
+        ]);
+
+        return redirect('/login')->with('success', 'Registrasi berhasil. Silakan login.');
     }
 
     /**
