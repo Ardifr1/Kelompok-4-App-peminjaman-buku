@@ -11,6 +11,7 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\KelolaAnggotaController;
 use App\Http\Controllers\konfirmasiController;
 use App\Http\Controllers\tambahbukuController;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,4 @@ Route::get('/konfirmasi', [konfirmasiController::class, 'index']);
 Route::post('/konfirmasi/{id}/approve', [konfirmasiController::class, 'approve'])->name('konfirmasi.approve');
 Route::delete('/konfirmasi/{id}/reject', [konfirmasiController::class, 'reject'])->name('konfirmasi.reject');
 Route::get('/tambahbuku', [tambahbukuController::class, 'index']);
+Route::get('/transaksi', [TransaksiController::class, 'index']);
