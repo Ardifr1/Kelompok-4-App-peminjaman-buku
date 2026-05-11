@@ -36,13 +36,16 @@
 
         <h2 class="text-center text-3xl font-semibold mb-8 tracking-wide">Daftar</h2>
 
-        <form action="#" method="POST" class="space-y-4">
+        <form action="/register" method="POST" class="space-y-4">
             @csrf
             <div>
                 <input type="text" name="nis" placeholder="Nis" class="input-field w-full px-5 py-3 focus:outline-none placeholder-gray-500 text-lg">
             </div>
             <div>
-                <input type="text" name="nama" placeholder="Nama" class="input-field w-full px-5 py-3 focus:outline-none placeholder-gray-500 text-lg">
+                <input type="text" name="name" placeholder="Nama" class="input-field w-full px-5 py-3 focus:outline-none placeholder-gray-500 text-lg">
+            </div>
+            <div>
+                <input type="text" name="username" placeholder="Username" class="input-field w-full px-5 py-3 focus:outline-none placeholder-gray-500 text-lg">
             </div>
             <div>
                 <select name="kelas" placeholder="Pilih Kelas" class="input-field w-full px-5 py-3 focus:outline-none text-gray-700 text-lg appearance-none cursor-pointer">

@@ -30,6 +30,7 @@ Route::get('/kelolaAnggota', [KAnggotaController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/register', [RegisterController::class,'index']);
+Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/dashboardAdmin', [DashboardController::class, 'dashboardAdmin']);
 
@@ -42,4 +43,6 @@ Route::get('/riwayat', [RiwayatController::class, 'index']);
 Route::get('/data', [AdminDashboardController::class, 'index']);
 Route::get('/anggota', [KelolaAnggotaController::class, 'index']);
 Route::get('/konfirmasi', [konfirmasiController::class, 'index']);
+Route::post('/konfirmasi/{id}/approve', [konfirmasiController::class, 'approve'])->name('konfirmasi.approve');
+Route::delete('/konfirmasi/{id}/reject', [konfirmasiController::class, 'reject'])->name('konfirmasi.reject');
 Route::get('/tambahbuku', [tambahbukuController::class, 'index']);

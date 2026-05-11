@@ -18,8 +18,23 @@ class LoginController extends Controller
     ]);
 
     if (Auth::attempt($credentials)) {
+        $user = Auth::user();
+
+        if ($user->status === 'pending') {
+            Auth::logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+            return back()->withErrors([
+                'username' => 'Akun Anda belum dikonfirmasi oleh Admin. Silakan tunggu.',
+            ])->onlyInput('username');
+        }
+
         $request->session()->regenerate();
-        return redirect()->intended('dashboard');
+        if ($user->role === 'admin') {
+            return redirect()->intended('dashboardAdmin');
+        } else {
+            return redirect()->intended('dashboard');
+        }
     }
 
     return back()->withErrors([
