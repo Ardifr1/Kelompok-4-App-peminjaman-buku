@@ -35,7 +35,7 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register.s
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
 // Route Fitur Siswa
-Route::get('/deskripsiBuku', [DashboardController::class, 'deskripsiBuku']);
+Route::get('/deskripsiBuku/{id}', [DashboardController::class, 'deskripsiBuku']);
 Route::get('/ajuanPeminjaman', [PeminjamanController::class, 'create']);
 Route::get('/riwayat', [RiwayatController::class, 'index']);
 
@@ -46,4 +46,5 @@ Route::get('/konfirmasi', [konfirmasiController::class, 'index']);
 Route::post('/konfirmasi/{id}/approve', [konfirmasiController::class, 'approve'])->name('konfirmasi.approve');
 Route::delete('/konfirmasi/{id}/reject', [konfirmasiController::class, 'reject'])->name('konfirmasi.reject');
 Route::get('/tambahbuku', [tambahbukuController::class, 'index']);
+Route::post('/tambahbuku', [tambahbukuController::class, 'store'])->name('tambahbuku.store');
 Route::get('/transaksi', [TransaksiController::class, 'index']);

@@ -13,14 +13,33 @@
     
     <div class="container">
         <div class="title">Tambahkan data buku</div>
+
+        {{-- Notifikasi sukses --}}
+        @if(session('success'))
+            <div style="background-color: #d4edda; color: #155724; padding: 12px 20px; border-radius: 10px; margin-bottom: 20px; font-weight: 500;">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        {{-- Notifikasi error validasi --}}
+        @if($errors->any())
+            <div style="background-color: #f8d7da; color: #721c24; padding: 12px 20px; border-radius: 10px; margin-bottom: 20px;">
+                <ul style="margin: 0; padding-left: 20px;">
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         
-        <form action="#" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('tambahbuku.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-layout">
                 <!-- Kolom Kiri: Upload Gambar & Kategori -->
                 <div class="left-col">
-                    <label class="image-upload" for="file-upload">
-                        Geser file jpg ke sini
+                    <label class="image-upload" for="file-upload" id="image-upload-label">
+                        <span id="upload-text">Geser file jpg ke sini</span>
+                        <img id="image-preview" src="" alt="Preview" style="display:none; width:auto; height:100%; object-fit:cover;">
                         <input type="file" id="file-upload" name="gambar" style="display: none;" accept=".jpg,.jpeg,.png">
                     </label>
                     <div class="category-buttons">
@@ -35,9 +54,10 @@
                 
                 <!-- Kolom Kanan: Input Data -->
                 <div class="right-col">
-                    <input type="text" class="input-field" name="nama_buku" placeholder="Nama buku....">
-                    <input type="text" class="input-field" name="penulis" placeholder="Penulis....">
-                    <textarea class="input-field" name="deskripsi" placeholder="Deskripsi...."></textarea>
+                    <input type="text" class="input-field" name="nama_buku" placeholder="Nama buku...." value="{{ old('nama_buku') }}">
+                    <input type="text" class="input-field" name="penulis" placeholder="Penulis...." value="{{ old('penulis') }}">
+                    <textarea class="input-field" name="deskripsi" placeholder="Deskripsi....">{{ old('deskripsi') }}</textarea>
+                    <input type="number" class="input-field" name="jumlah_buku" placeholder="Jumlah...." value="{{ old('jumlah_buku') }}">
                     
                     <div class="action-buttons">
                         <button type="button" class="btn btn-cancel" onclick="window.history.back()">Batal</button>
@@ -68,6 +88,20 @@
                     categoryLabels[index].style.color = '#fff';
                 }
             });
+        });
+
+        // Preview gambar saat file dipilih
+        document.getElementById('file-upload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    document.getElementById('image-preview').src = event.target.result;
+                    document.getElementById('image-preview').style.display = 'block';
+                    document.getElementById('upload-text').style.display = 'none';
+                };
+                reader.readAsDataURL(file);
+            }
         });
     </script>
 </body>

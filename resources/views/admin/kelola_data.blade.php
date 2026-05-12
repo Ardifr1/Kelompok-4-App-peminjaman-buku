@@ -38,7 +38,7 @@
                 <!-- SECTION BUKU UMUM -->
                 <section class="book-section">
                     <div class="section-header">
-                        <a href="#" class="tambah">+ Tambah Buku</a>
+                        <a href="/tambahbuku" class="tambah">+ Tambah Buku</a>
                     </div>
                     <br>
                     <div class="tabel-container">

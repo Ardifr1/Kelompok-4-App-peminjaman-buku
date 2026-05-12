@@ -18,6 +18,7 @@ return new class extends Migration
             $table->enum('role', ['admin', 'siswa'])->default('siswa');
             $table->string('nis')->nullable();
             $table->string('kelas')->nullable();
+            $table->enum('status', ['pending', 'active'])->default('pending');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

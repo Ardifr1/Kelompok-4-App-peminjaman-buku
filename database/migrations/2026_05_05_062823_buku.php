@@ -11,7 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('buku', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_buku');
+            $table->string('penulis');
+            $table->text('deskripsi')->nullable();
+            $table->string('kategori'); // Umum atau Pelajaran
+            $table->integer('jumlah_buku')->default(0);
+            $table->string('gambar')->nullable(); // path ke file gambar
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('buku');
     }
 };

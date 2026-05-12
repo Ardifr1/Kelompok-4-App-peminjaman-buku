@@ -39,32 +39,30 @@
                 <section class="book-section">
                     <div class="section-header">
                         <span class="font">Anggota</span>
-                        <a href="#" class="tambah">Konfirmasi Anggota</a>
+                        <a href="/konfirmasi" class="tambah">Konfirmasi Anggota</a>
                     </div>
                     <br>
                     <div class="tabel-container">
                         <table class="tabel-buku" border="1" cellpadding="10" cellspacing="0">
                         <tr>
-                        <th>No</th>
-                        <th>Nama Buku</th>
-                        <th>Kategori</th>
-                        <th>Stock</th>
-                        <th>Deskripsi</th>
+                        <th style="width: 5%;">No</th>
+                        <th style="width: 30%;">Nama</th>
+                        <th style="width: 15%;">Kelas</th>
+                        <th style="width: 30%;">NIS</th>
                         </tr>
+                        @forelse ($anggota as $index => $item)
                         <tr>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
+                            <td>{{ $index + 1 }}</td>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->kelas ?? '-' }}</td>
+                            <td>{{ $item->nis ?? '-' }}</td>
                         </tr>
+                        @empty
                         <tr>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
+                            <td colspan="4" style="text-align: center;">Belum ada data anggota</td>
                         </tr>
+                        @endforelse
+
                         </table>
                     </div>
                 </section>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body >         
-    <a href="#" class="kembali"><i class="fa-solid fa-arrow-left"></i> Kembali
+    <a href="/anggota" class="kembali"><i class="fa-solid fa-arrow-left"></i> Kembali
         </a>
         <div class="content">
             <div class="blue-container">
@@ -17,7 +17,7 @@
                 <section class="book-section">
                     <div class="section-header">
                         
-                        <a href="#" class="tambah">Konfirmasi Anggota</a>
+                        <a href="/anggota" class="tambah">Konfirmasi Anggota</a>
                     </div>
                     <br>
                     <div class="tabel-container">

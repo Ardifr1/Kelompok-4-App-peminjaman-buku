@@ -23,8 +23,8 @@
 
     <div class="main-layout">
         <aside class="sidebar">
-            <a href="/dashboard" class="menu-item active">Menu Buku</a>
-            <a href="/riwayat" class="menu-item">Riwayat</a>
+            <a href="/dashboard" class="menu-item">Menu Buku</a>
+            <a href="/riwayat" class="menu-item active">Riwayat</a>
         </aside>
 
         <main class="content-wrapper">

@@ -14,32 +14,37 @@
         <div class="top-bar">
             <div class="top-left">
                 <a href="/dashboard" class="btn btn-kembali">Kembali</a>
-                <div class="stok-badge">Stok 5</div>
+                <div class="stok-badge">Stok {{ $buku->jumlah_buku }}</div>
             </div>
             <a href="/ajuanPeminjaman" class="btn btn-ajukan">Ajukan peminjaman</a>
         </div>
 
         <div class="book-cover">
-            <!-- Using a placeholder cover since this is UI only -->
-            <img src="{{asset('gambar/Matematika_BS_KLS_X_Rev_Cover 1.jpg')}}" alt="Cover Buku">
+            @if($buku->gambar)
+                <img src="{{ asset($buku->gambar) }}" alt="Cover {{ $buku->nama_buku }}">
+            @else
+                <div style="width:100%;height:300px;background:#ddd;display:flex;align-items:center;justify-content:center;border-radius:10px;">
+                    <span>Tidak ada gambar</span>
+                </div>
+            @endif
         </div>
 
         <div class="book-details">
             <div class="detail-row">
                 <div class="detail-label">Judul</div>
-                <div class="detail-value">: Matematika</div>
+                <div class="detail-value">: {{ $buku->nama_buku }}</div>
             </div>
             <div class="detail-row">
-                <div class="detail-label">Kelas</div>
-                <div class="detail-value">: 11</div>
+                <div class="detail-label">Penulis</div>
+                <div class="detail-value">: {{ $buku->penulis }}</div>
             </div>
             <div class="detail-row">
-                <div class="detail-label">Genre</div>
-                <div class="detail-value">: Pendidikan</div>
+                <div class="detail-label">Kategori</div>
+                <div class="detail-value">: {{ $buku->kategori }}</div>
             </div>
             <div class="detail-row">
                 <div class="detail-label">Deskripsi</div>
-                <div class="detail-value">: Buku pelajaran Matematika ini dirancang untuk membantu siswa untuk memahami konsep konsep dasar dan lanjutan secara bertahap.</div>
+                <div class="detail-value">: {{ $buku->deskripsi ?? 'Tidak ada deskripsi' }}</div>
             </div>
         </div>
     </div>

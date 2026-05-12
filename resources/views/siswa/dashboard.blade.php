@@ -32,49 +32,79 @@
                 <section class="search-section">
                     <div class="search-bar" style="display:flex;justify-content:center;">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" placeholder="Cari buku..." class="search-input" name="search">
-                        <button type="submit" class="search-btn">Cari</button>
+                        <input type="text" placeholder="Cari buku..." class="search-input" name="search" id="searchInput">
+                        <button type="button" class="search-btn" onclick="searchBooks()">Cari</button>
                     </div>
-
                 </section>
+
                 <!-- SECTION BUKU PELAJARAN -->
                 <section class="book-section">
                     <div class="section-header">
                         <span class="category-title">Buku Pelajaran :</span>
-                        <!-- <a href="/allPelajaran" class="see-all">Lihat Semua</a> -->
                     </div>
                     <div class="book-container">
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
+                        @forelse($bukuPelajaran as $buku)
+                            <a href="/deskripsiBuku/{{ $buku->id }}" class="book-link">
+                                <div class="book" data-nama="{{ strtolower($buku->nama_buku) }}">
+                                    @if($buku->gambar)
+                                        <img src="{{ asset($buku->gambar) }}" alt="{{ $buku->nama_buku }}" class="book-cover">
+                                    @endif
+                                    <div class="book-title">{{ $buku->nama_buku }}</div>
+                                </div>
+                            </a>
+                        @empty
+                            <p class="empty-text">Belum ada buku pelajaran.</p>
+                        @endforelse
                     </div>
                 </section>
-<br>
+
+                <br>
+
+                <!-- SECTION BUKU UMUM -->
                 <section class="book-section lesson-section">
                     <div class="section-header">
                         <span class="category-title">Buku Umum :</span>
-                        <!-- <a href="/allUmum" class="see-all" style="color: white;">Lihat Semua</a> -->
                     </div>
                     <div class="book-container">
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
-                        <div class="book"></div>
+                        @forelse($bukuUmum as $buku)
+                            <a href="/deskripsiBuku/{{ $buku->id }}" class="book-link">
+                                <div class="book" data-nama="{{ strtolower($buku->nama_buku) }}">
+                                    @if($buku->gambar)
+                                        <img src="{{ asset($buku->gambar) }}" alt="{{ $buku->nama_buku }}" class="book-cover">
+                                    @endif
+                                    <div class="book-title">{{ $buku->nama_buku }}</div>
+                                </div>
+                            </a>
+                        @empty
+                            <p class="empty-text">Belum ada buku umum.</p>
+                        @endforelse
                     </div>
                 </section>
             </div>
         </main>
     </div>
+
+    <script>
+        function searchBooks() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const books = document.querySelectorAll('.book');
+            books.forEach(book => {
+                const nama = book.getAttribute('data-nama') || '';
+                const parent = book.closest('.book-link');
+                if (nama.includes(query)) {
+                    if (parent) parent.style.display = '';
+                    else book.style.display = '';
+                } else {
+                    if (parent) parent.style.display = 'none';
+                    else book.style.display = 'none';
+                }
+            });
+        }
+
+        // Cari saat tekan Enter
+        document.getElementById('searchInput').addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') searchBooks();
+        });
+    </script>
 </body>
 </html>

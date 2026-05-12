@@ -3,17 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\bukuModel;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        return view('siswa.dashboard');
+        $bukuPelajaran = bukuModel::where('kategori', 'Pelajaran')->get();
+        $bukuUmum = bukuModel::where('kategori', 'Umum')->get();
+
+        return view('siswa.dashboard', compact('bukuPelajaran', 'bukuUmum'));
     }
 
-    public function deskripsiBuku()
+    public function deskripsiBuku($id)
     {
-        return view('siswa.deskripsiBuku');
+        $buku = bukuModel::findOrFail($id);
+        return view('siswa.deskripsiBuku', compact('buku'));
     }
 
     /**
