@@ -36,7 +36,7 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 
 // Route Fitur Siswa
 Route::get('/deskripsiBuku/{id}', [DashboardController::class, 'deskripsiBuku']);
-Route::get('/ajuanPeminjaman', [PeminjamanController::class, 'create']);
+Route::get('/ajuanPeminjaman/{id}', [PeminjamanController::class, 'create']);
 Route::get('/riwayat', [RiwayatController::class, 'index']);
 
 // Route Fitur Admin
