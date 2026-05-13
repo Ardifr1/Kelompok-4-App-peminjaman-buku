@@ -11,14 +11,14 @@ body {
     flex-direction: column;
     min-height: 100vh;
     
-    background-color: #0080ff;
+    background-color: #657167;
     
 }
 /* CONTENT AREA */
 .kembali{
     display: inline-block;
     padding: 16px 15px;
-    background-color: #6FA8DC;
+    background-color: #657167;
     color: white;
     text-decoration: none;
     border-radius: 20px;
@@ -36,7 +36,7 @@ body {
 }
 
 .blue-container {
-    background-color: #96d1fc;
+    background-color: #a1a1a1;
     padding: 30px;
     border-radius: 25px;
     width: 100%;
@@ -57,7 +57,7 @@ body {
 .tambah{
     display: inline-block;
     padding: 16px 15px;
-    background-color: #0080ff;
+    background-color: #657167;
     color: white;
     text-decoration: none;
     border-radius: 20px;
@@ -72,6 +72,7 @@ body {
 }
 .tabel-container {
     background-color: white;
+    box-shadow: 6px 4px 5px rgba(0, 0, 0, 0.6);
     padding: 20px;
     border-radius: 20px;
     display: flex;
@@ -90,7 +91,7 @@ body {
     text-align: center;
 }
 th{
-    background-color: #0080ff;
+    background-color: #657167;
     color: black;
     padding: 10px;
     font: caption;
