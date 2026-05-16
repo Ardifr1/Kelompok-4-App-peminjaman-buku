@@ -1,90 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Akun</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <style>
-        /* Custom styling untuk efek liquid glass yang lebih halus */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.2); /* Transparansi putih */
-            backdrop-filter: blur(15px); /* Efek blur kaca */
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daftar - Mahaputra Library</title>
 
-        .input-field {
-            background: rgba(217, 217, 217, 0.8);
-            border: 1px solid #000;
-            border-radius: 20px;
-        }
-    </style>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
 </head>
-<body class="bg-[#74a9d8] flex items-center justify-center min-h-screen font-sans">
 
-    <div class="glass-card w-[90%] max-w-md p-10 shadow-2xl relative">
-        
-        <div class="flex justify-center mb-4">
-            <div class="w-24 h-24 bg-gray-400 rounded-full border-2 border-black flex items-center justify-center overflow-hidden">
-                <svg viewBox="0 0 24 24" fill="white" class="w-20 h-20 mt-4">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                </svg>
-            </div>
+<body class="bg-[#dfe9e3] min-h-screen flex items-center justify-center p-5">
+
+  <div class="w-full max-w-6xl bg-[#dfe9e3] rounded-2xl shadow-2xl overflow-hidden border border-gray-300">
+
+    <div class="grid md:grid-cols-2 min-h-[650px]">
+
+      <!-- LEFT -->
+      <div class="flex flex-col items-center justify-center px-10 py-10">
+
+        <h1 class="text-3xl font-bold text-sky-400 mb-2 text-center">
+          Selamat Datang Di Mahaputra Library!
+        </h1>
+
+        <p class="text-gray-700 text-lg mb-10 text-center">
+          Silahkan Daftar untuk melanjutkan
+        </p>
+
+        <!-- LOGO -->
+        <div class="w-72 h-72 bg-white rounded-full flex items-center justify-center shadow-lg overflow-hidden">
+
+          <img
+        src="{{ asset('gambar/logo peminjaman buku.jpg') }}"
+        alt="Logo Mahaputra"
+        class="w-full h-full object-cover"
+          >
+
         </div>
 
-        <h2 class="text-center text-3xl font-semibold mb-8 tracking-wide">Daftar</h2>
+      </div>
 
-        <form action="/register" method="POST" class="space-y-4">
-            @csrf
-            <div>
-                <input type="text" name="nis" placeholder="Nis" class="input-field w-full px-5 py-3 focus:outline-none placeholder-gray-500 text-lg">
-            </div>
-            <div>
-                <input type="text" name="name" placeholder="Nama" class="input-field w-full px-5 py-3 focus:outline-none placeholder-gray-500 text-lg">
-            </div>
-            <div>
-                <input type="text" name="username" placeholder="Username" class="input-field w-full px-5 py-3 focus:outline-none placeholder-gray-500 text-lg">
-            </div>
-            <div>
-                <select name="kelas" placeholder="Pilih Kelas" class="input-field w-full px-5 py-3 focus:outline-none text-gray-700 text-lg appearance-none cursor-pointer">
-                    <option value="" disabled selected>Pilih Kelas</option>
-                    <option value="XPPLG1">Kelas X PPLG 1</option>
-                    <option value="XPPLG2">Kelas X PPLG 2</option>
-                    <option value="" disabled>==========</option>
-                    <option value="XDKV1">Kelas X DKV 1</option>
-                    <option value="XDKV2">Kelas X DKV 2</option>
-                    <option value="" disabled>==========</option>
-                    <option value="XIPPLG1">Kelas XI PPLG 1</option>
-                    <option value="XIPPLG2">Kelas XI PPLG 2</option>
-                    <option value="" disabled>==========</option>
-                    <option value="XIDKV1">Kelas XI DKV 1</option>
-                    <option value="XIDKV2">Kelas XI DKV 2</option>
-                    <option value="" disabled>==========</option>
-                    <option value="XIIPPLG1">Kelas XII PPLG 1</option>
-                    <option value="XIIPPLG2">Kelas XII PPLG 2</option>
-                    <option value="" disabled>==========</option>
-                    <option value="XIIDKV1">Kelas XII DKV 1</option>
-                    <option value="XIIDKV2">Kelas XII DKV 2</option>
-                </select>
-            </div>
-            <div>
-                <input type="password" name="password" placeholder="Password" class="input-field w-full px-5 py-3 focus:outline-none placeholder-gray-500 text-lg">
-            </div>
+      <!-- RIGHT -->
+      <div class="flex flex-col items-center justify-center px-10 py-10">
 
-            <div class="flex justify-center pt-4">
-                <button type="submit" class="bg-[#66ff66] hover:bg-[#52e052] text-black font-medium px-12 py-2 rounded-full border border-black text-xl transition-all shadow-md">
-                    Daftar
-                </button>
-            </div>
+        <h1 class="text-5xl font-semibold text-gray-800 mb-8">
+          Daftar
+        </h1>
+
+        <!-- Icon User -->
+        <div class="w-28 h-28 rounded-full bg-gray-300 border-2 border-gray-500 flex items-center justify-center mb-8">
+          <i class="fa-solid fa-user text-5xl text-white"></i>
+        </div>
+
+        <!-- FORM -->
+        <form class="w-full max-w-md space-y-5">
+
+          <input
+            type="text"
+            placeholder="Nis"
+            class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400"
+          />
+
+          <input
+            type="text"
+            placeholder="Nama"
+            class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400"
+          />
+
+          <input
+            type="text"
+            placeholder="Kelas"
+            class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400"
+          />
+
+          <input
+            type="password"
+            placeholder="Password"
+            class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400"
+          />
+
+          <!-- BUTTON -->
+          <div class="flex justify-center">
+            <button
+              type="submit"
+              class="bg-lime-400 hover:bg-lime-500 transition duration-300 text-black font-semibold px-16 py-3 rounded-full shadow-md"
+            >
+              Daftar
+            </button>
+          </div>
+
+          <!-- LOGIN -->
+          <p class="text-center text-sm text-gray-700 mt-3">
+            Sudah Punya Akun?
+            <a href="#" class="text-blue-600 hover:underline">
+              Login Sekarang
+            </a>
+          </p>
+
         </form>
 
-        <div class="text-center mt-6 text-xs font-semibold">
-            Sudah Punya Akun? <a href="/login" class="text-blue-700 hover:underline">Login Sekarang</a>
-        </div>
+      </div>
+
     </div>
+
+  </div>
 
 </body>
 </html>
