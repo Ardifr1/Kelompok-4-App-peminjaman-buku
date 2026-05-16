@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahaputra Library - Dashboard</title>
     <link rel="stylesheet" href="{{ asset('css/kelola_data.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>         
     <header class="header">
@@ -35,13 +35,31 @@
         <main class="content-wrapper">
             <div class="blue-container">
 
-                <!-- SECTION BUKU UMUM -->
+                
                 <section class="book-section">
-                    <div class="section-header">
+                    <div class="action-buttons">
+                        <button class="select" onclick="toggleSelect()">Select</button>
                         <a href="/tambahbuku" class="tambah">+ Tambah Buku</a>
                     </div>
                     <br>
                     <div class="tabel-container">
+                        <div class=table-wrapper>
+                            <!-- ACTION ICON -->
+    <div class="action-column" id="actionColumn">
+
+      <div class="action-btn">
+        <i class="fa-solid fa-trash"></i>
+        <i class="fa-solid fa-pen-to-square"></i>
+      </div>
+
+      <div class="action-btn">
+        <i class="fa-solid fa-trash"></i>
+        <i class="fa-solid fa-pen-to-square"></i>
+      </div>
+
+
+
+                        </div>
                         <table class="tabel-buku" border="1" cellpadding="10" cellspacing="0">
                         <tr>
                         <th>No</th>
@@ -72,5 +90,6 @@
             </div>
         </main>
     </div>
+    <script src="{{ asset('js/select.js') }}"></script>
 </body>
 </html>
