@@ -71,11 +71,24 @@
             class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400"
           />
 
-          <input
-            type="text"
-            placeholder="Kelas"
-            class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400"
-          />
+          <select class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400">
+              <option selected disabled>Kelas</option>
+
+              <optgroup label="Kelas X">
+                  <option value="X PPLG">X PPLG</option>
+                  <option value="X DKV">X DKV</option>
+              </optgroup>
+
+              <optgroup label="Kelas XI">
+                  <option value="XI PPLG">XI PPLG</option>
+                  <option value="XI DKV">XI DKV</option>
+              </optgroup>
+
+              <optgroup label="Kelas XII">
+                  <option value="XII PPLG">XII PPLG</option>
+                  <option value="XII DKV">XII DKV</option>
+              </optgroup>
+          </select>
 
           <input
             type="password"
@@ -96,7 +109,7 @@
           <!-- LOGIN -->
           <p class="text-center text-sm text-gray-700 mt-3">
             Sudah Punya Akun?
-            <a href="#" class="text-blue-600 hover:underline">
+            <a href="/login" class="text-blue-600 hover:underline">
               Login Sekarang
             </a>
           </p>
