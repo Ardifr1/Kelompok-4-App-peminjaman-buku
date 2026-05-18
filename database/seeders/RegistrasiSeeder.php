@@ -14,7 +14,7 @@ class RegistrasiSeeder extends Seeder
     public function run(): void
     {
         RegistrasiModel::create([
-        'nis'      => '12345',
+        'nis'      => '000001',
         'nama'     => 'Budi Santoso',
         'username' => 'Budi Sentosa',
         'kelas'    => 'XII PPLG 1',   
@@ -23,7 +23,7 @@ class RegistrasiSeeder extends Seeder
 
     // Data kedua
     RegistrasiModel::create([
-        'nis'      => '12346',
+        'nis'      => '000002',
         'nama'     => 'Abhi Mulki A',
         'username' => 'Abhi Developer',
         'kelas'    => 'XII PPLG 1',
