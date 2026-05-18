@@ -79,7 +79,7 @@
             id="Username"
             class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400"
           />
-          
+
           <select class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400">
               <option selected disabled>Kelas</option>
 
@@ -102,6 +102,7 @@
           <input
             type="password"
             placeholder="Password"
+            id="Password"
             class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400"
           />
 
