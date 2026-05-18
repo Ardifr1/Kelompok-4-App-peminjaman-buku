@@ -40,7 +40,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($riwayatPeminjaman as $riwayat)
+                        @forelse($Riwayat as $riwayat)
                             <tr>
                                 <td>{{ sprintf('%02d', $loop->iteration) }}</td>
                             

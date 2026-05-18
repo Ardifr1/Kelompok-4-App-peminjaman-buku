@@ -10,9 +10,9 @@ class RiwayatController extends Controller
 {
     public function index()
     {
-        $riwayat = RiwayatModel::where('user_id', Auth::id())->latest()->get();
+        $Riwayat = RiwayatModel::where('user_id', Auth::id())->latest()->get();
 
-        return view('siswa.riwayat', compact('riwayatPeminjaman'));
+        return view('siswa.riwayat', compact('riwayat'));
     }
 /**
      * Show the form for creating a new resource.
