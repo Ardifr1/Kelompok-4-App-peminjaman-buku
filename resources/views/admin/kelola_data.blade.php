@@ -43,46 +43,39 @@
                     </div>
                     <br>
                     <div class="tabel-container">
-                        <div class=table-wrapper>
+                        <div class="table-wrapper">
                             <!-- ACTION ICON -->
-                        <div class="action-column" id="actionColumn">
-
-                          <div class="action-btn">
-                            <i class="fa-solid fa-trash"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                          </div>
-
-                          <div class="action-btn">
-                            <i class="fa-solid fa-trash"></i>
-                            <i class="fa-solid fa-pen-to-square"></i>
-                          </div>
-
+                            <div class="action-column" id="actionColumn">
+                                @foreach($buku as $item)
+                                <div class="action-btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </div>
+                                @endforeach
+                            </div>
+                            <table class="tabel-buku" border="1" cellpadding="10" cellspacing="0">
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Buku</th>
+                                    <th>Kategori</th>
+                                    <th>Stock</th>
+                                    <th>Deskripsi</th>
+                                </tr>
+                                @forelse ($buku as $index => $item)
+                                <tr>
+                                    <td>{{ $index + 1 }}</td>
+                                    <td>{{ $item->nama_buku }}</td>
+                                    <td>{{ $item->kategori }}</td>
+                                    <td>{{ $item->jumlah_buku }}</td>
+                                    <td>{{ Str::limit($item->deskripsi, 50) }}</td>
+                                </tr>
+                                @empty
+                                <tr>
+                                    <td colspan="5" style="text-align: center;">Belum ada data buku</td>
+                                </tr>
+                                @endforelse
+                            </table>
                         </div>
-                        
-                        <table class="tabel-buku" border="1" cellpadding="10" cellspacing="0">
-                        <tr>
-                        <th>No</th>
-                        <th>Nama Buku</th>
-                        <th>Kategori</th>
-                        <th>Stock</th>
-                        <th>Deskripsi</th>
-                        </tr>
-                        <tr>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
-                        </tr>
-                        <tr>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test</td>
-                        </tr>
-                        </table>
-                    </div>
                 </section>
 <br>
                 </section>
