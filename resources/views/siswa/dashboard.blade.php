@@ -31,9 +31,9 @@
             <div class="blue-container">
                 <section class="search-section">
                     <div class="search-bar" style="display:flex;justify-content:center;">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        
                         <input type="text" placeholder="Cari buku..." class="search-input" name="search" id="searchInput">
-                        <button type="button" class="search-btn" onclick="searchBooks()">Cari</button>
+                        
                     </div>
                 </section>
 
@@ -85,26 +85,37 @@
     </div>
 
     <script>
-        function searchBooks() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            const books = document.querySelectorAll('.book');
-            books.forEach(book => {
-                const nama = book.getAttribute('data-nama') || '';
-                const parent = book.closest('.book-link');
-                if (nama.includes(query)) {
-                    if (parent) parent.style.display = '';
-                    else book.style.display = '';
-                } else {
-                    if (parent) parent.style.display = 'none';
-                    else book.style.display = 'none';
-                }
-            });
-        }
+    function searchBooks() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const books = document.querySelectorAll('.book');
 
-        // Cari saat tekan Enter
-        document.getElementById('searchInput').addEventListener('keyup', function(e) {
-            if (e.key === 'Enter') searchBooks();
+        books.forEach(book => {
+            const nama = book.getAttribute('data-nama') || '';
+            const parent = book.closest('.book-link');
+
+            if (nama.includes(query)) {
+                if (parent) {
+                    parent.style.display = 'inline-block';
+                } else {
+                    book.style.display = 'inline-block';
+                }
+            } else {
+                if (parent) {
+                    parent.style.display = 'none';
+                } else {
+                    book.style.display = 'none';
+                }
+            }
         });
-    </script>
+    }
+
+    // Tekan Enter untuk mencari
+    document.getElementById('searchInput').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            searchBooks();
+        }
+    });
+</script>
 </body>
 </html>
