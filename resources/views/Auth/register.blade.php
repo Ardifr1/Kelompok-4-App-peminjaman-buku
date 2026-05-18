@@ -92,7 +92,10 @@
             value="{{ old('username') }}"
             class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400"
           />
-
+          @error('username')
+            <p class="text-red 500 text-sm mt-1 ml-2">{{ $message }}</p>
+          @enderror
+          
           <select class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400">
               <option selected disabled>Kelas</option>
 
