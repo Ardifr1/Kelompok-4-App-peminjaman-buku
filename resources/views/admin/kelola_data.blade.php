@@ -45,21 +45,20 @@
                     <div class="tabel-container">
                         <div class=table-wrapper>
                             <!-- ACTION ICON -->
-    <div class="action-column" id="actionColumn">
+                        <div class="action-column" id="actionColumn">
 
-      <div class="action-btn">
-        <i class="fa-solid fa-trash"></i>
-        <i class="fa-solid fa-pen-to-square"></i>
-      </div>
+                          <div class="action-btn">
+                            <i class="fa-solid fa-trash"></i>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                          </div>
 
-      <div class="action-btn">
-        <i class="fa-solid fa-trash"></i>
-        <i class="fa-solid fa-pen-to-square"></i>
-      </div>
-
-
+                          <div class="action-btn">
+                            <i class="fa-solid fa-trash"></i>
+                            <i class="fa-solid fa-pen-to-square"></i>
+                          </div>
 
                         </div>
+                        
                         <table class="tabel-buku" border="1" cellpadding="10" cellspacing="0">
                         <tr>
                         <th>No</th>
