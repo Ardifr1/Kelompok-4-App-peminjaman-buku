@@ -41,4 +41,12 @@ class LoginController extends Controller
         'username' => 'Username atau password tidak cocok.',
     ])->onlyInput('username');
     }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/login');
+    }
 }

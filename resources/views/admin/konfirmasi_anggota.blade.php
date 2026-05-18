@@ -16,9 +16,13 @@
                 <!-- SECTION BUKU UMUM -->
                 <section class="book-section">
                     <div class="section-header">
-                        
                         <a href="/anggota" class="tambah">Konfirmasi Anggota</a>
                     </div>
+                    @if (session('success'))
+                        <div style="background-color: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin: 15px 0; border: 1px solid #c3e6cb; font-size: 14px;">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <br>
                     <div class="tabel-container">
                         <table class="tabel-buku" border="1" cellpadding="10" cellspacing="0">

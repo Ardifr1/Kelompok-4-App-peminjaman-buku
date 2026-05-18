@@ -23,6 +23,11 @@
         <div class="right">
             <h2>Login</h2><br>
              <div class="form-group">
+            @if (session('success'))
+                <div style="background-color: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-bottom: 15px; border: 1px solid #c3e6cb; font-size: 14px;">
+                    {{ session('success') }}
+                </div>
+            @endif
             <form action="/login" method="POST">
             @csrf
             <input type="text" name="username" id="username" placeholder="Username..." value="{{ old('username') }}">

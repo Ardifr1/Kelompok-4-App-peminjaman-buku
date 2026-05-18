@@ -57,53 +57,76 @@
         </div>
 
         <!-- FORM -->
-        <form class="w-full max-w-md space-y-5">
+        <form action="{{ route('register.store') }}" method="POST" class="w-full max-w-md space-y-5">
+          @csrf
 
           <input
             type="text"
+            name="nis"
             placeholder="Nis"
             id="NIS"
+            value="{{ old('nis') }}"
             class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400"
           />
+          @error('nis')
+              <p class="text-red-500 text-sm mt-1 ml-2">{{ $message }}</p>
+          @enderror
 
           <input
             type="text"
+            name="name"
             placeholder="Nama"
             id="Nama"
+            value="{{ old('name') }}"
             class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400"
           />
+          @error('name')
+              <p class="text-red-500 text-sm mt-1 ml-2">{{ $message }}</p>
+          @enderror
 
           <input
             type="text"
+            name="username"
             placeholder="Username"
             id="Username"
+            value="{{ old('username') }}"
             class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400"
           />
+          @error('username')
+              <p class="text-red-500 text-sm mt-1 ml-2">{{ $message }}</p>
+          @enderror
           
-          <select class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400">
+          <select name="kelas" class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400">
               <option selected disabled>Kelas</option>
 
               <optgroup label="Kelas X">
-                  <option value="X PPLG">X PPLG</option>
-                  <option value="X DKV">X DKV</option>
+                  <option value="X PPLG" {{ old('kelas') == 'X PPLG' ? 'selected' : '' }}>X PPLG</option>
+                  <option value="X DKV" {{ old('kelas') == 'X DKV' ? 'selected' : '' }}>X DKV</option>
               </optgroup>
 
               <optgroup label="Kelas XI">
-                  <option value="XI PPLG">XI PPLG</option>
-                  <option value="XI DKV">XI DKV</option>
+                  <option value="XI PPLG" {{ old('kelas') == 'XI PPLG' ? 'selected' : '' }}>XI PPLG</option>
+                  <option value="XI DKV" {{ old('kelas') == 'XI DKV' ? 'selected' : '' }}>XI DKV</option>
               </optgroup>
 
               <optgroup label="Kelas XII">
-                  <option value="XII PPLG">XII PPLG</option>
-                  <option value="XII DKV">XII DKV</option>
+                  <option value="XII PPLG" {{ old('kelas') == 'XII PPLG' ? 'selected' : '' }}>XII PPLG</option>
+                  <option value="XII DKV" {{ old('kelas') == 'XII DKV' ? 'selected' : '' }}>XII DKV</option>
               </optgroup>
           </select>
+          @error('kelas')
+              <p class="text-red-500 text-sm mt-1 ml-2">{{ $message }}</p>
+          @enderror
 
           <input
             type="password"
+            name="password"
             placeholder="Password"
             class="w-full px-6 py-4 rounded-3xl bg-gray-200 border border-gray-400 outline-none focus:ring-2 focus:ring-green-400"
           />
+          @error('password')
+              <p class="text-red-500 text-sm mt-1 ml-2">{{ $message }}</p>
+          @enderror
 
           <!-- BUTTON -->
           <div class="flex justify-center">
