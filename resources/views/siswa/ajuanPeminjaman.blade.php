@@ -10,14 +10,14 @@
 </head>
 <body>
 
-    <a href="/deskripsiBuku/{{ $buku->id }}" class="btn-kembali">Kembali</a>
+    <a href="/deskripsiBuku" class="btn-kembali">Kembali</a>
     <div class="main-container">
         <div class="form-container">
             <div class="form-title">Isi Form Pengajuan</div>
 
             <form action="#" method="GET">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Nama Buku" value="{{ $buku->nama_buku }}" readonly required>
+                    <input type="text" class="form-control" placeholder="Nama Buku" required>
                 </div>
                 <div class="form-group">
                     <input type="datetime-local" class="form-control" required title="Tanggal meminjam" placeholder="Tanggal meminjam">
@@ -26,7 +26,7 @@
                     <input type="datetime-local" class="form-control" required title="Tanggal pengembalian" placeholder="Tanggal pengembalian">
                 </div>
                 <div class="form-group row-bottom">
-                    <input type="number" class="form-control" placeholder="Jumlah" min="1" max="{{ $buku->jumlah_buku }}" required>
+                    <input type="number" class="form-control" placeholder="Jumlah" min="1" required>
                     <button type="submit" class="btn-ajukan">Ajukan</button>
                 </div>
             </form>
