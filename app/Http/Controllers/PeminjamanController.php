@@ -17,9 +17,10 @@ class PeminjamanController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($id)
     {
-        return view('siswa.ajuanPeminjaman');
+        $buku = \App\Models\bukuModel::findOrFail($id);
+        return view('siswa.ajuanPeminjaman', compact('buku'));
     }
 
     /**

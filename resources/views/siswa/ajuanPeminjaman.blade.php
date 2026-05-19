@@ -17,7 +17,8 @@
 
             <form action="#" method="GET">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Nama Buku" required>
+                    <input type="text" class="form-control" placeholder="Nama Buku" value="{{ $buku->nama_buku }}" readonly required>
+                    <input type="hidden" name="buku_id" value="{{ $buku->id }}">
                 </div>
                 <div class="form-group">
                     <input type="datetime-local" class="form-control" required title="Tanggal meminjam" placeholder="Tanggal meminjam">
@@ -26,7 +27,7 @@
                     <input type="datetime-local" class="form-control" required title="Tanggal pengembalian" placeholder="Tanggal pengembalian">
                 </div>
                 <div class="form-group row-bottom">
-                    <input type="number" class="form-control" placeholder="Jumlah" min="1" required>
+                    <input type="number" class="form-control" placeholder="Jumlah" min="1" max="{{ $buku->jumlah_buku }}" required>
                     <button type="submit" class="btn-ajukan">Ajukan</button>
                 </div>
             </form>

@@ -16,7 +16,7 @@
                 <a href="/dashboard" class="btn btn-kembali">Kembali</a>
                 <div class="stok-badge">Stok {{ $buku->jumlah_buku }}</div>
             </div>
-            <a href="/ajuanPeminjaman" class="btn btn-ajukan">Ajukan peminjaman</a>
+            <a href="/ajuanPeminjaman/{{ $buku->id }}" class="btn btn-ajukan">Ajukan peminjaman</a>
         </div>
 
         <div class="book-cover">
