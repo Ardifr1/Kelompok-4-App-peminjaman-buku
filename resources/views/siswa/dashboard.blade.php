@@ -38,7 +38,7 @@
                 </section>
 
                 <!-- SECTION BUKU PELAJARAN -->
-                <section class="book-section">
+                <section class="book-section" id="pelajaranSection">
                     <div class="section-header">
                         <span class="category-title">Buku Pelajaran :</span>
                     </div>
@@ -61,7 +61,7 @@
                 <br>
 
                 <!-- SECTION BUKU UMUM -->
-                <section class="book-section lesson-section">
+                <section class="book-section lesson-section" id="umumSection">
                     <div class="section-header">
                         <span class="category-title">Buku Umum :</span>
                     </div>
@@ -86,36 +86,114 @@
 
     <script>
     function searchBooks() {
-        const query = document.getElementById('searchInput').value.toLowerCase();
+
+        const query = document
+            .getElementById('searchInput')
+            .value
+            .toLowerCase();
+
         const books = document.querySelectorAll('.book');
 
-        books.forEach(book => {
-            const nama = book.getAttribute('data-nama') || '';
-            const parent = book.closest('.book-link');
+        const pelajaranSection =
+            document.getElementById('pelajaranSection');
 
-            if (nama.includes(query)) {
-                if (parent) {
-                    parent.style.display = 'inline-block';
-                } else {
-                    book.style.display = 'inline-block';
-                }
+        const umumSection =
+            document.getElementById('umumSection');
+
+        const judulPelajaran =
+            pelajaranSection.querySelector('.category-title');
+
+        const container =
+            pelajaranSection.querySelector('.book-container');
+
+        let ditemukan = false;
+
+        // hapus pesan lama
+        const oldMessage =
+            document.getElementById('notFoundMessage');
+
+        if (oldMessage) {
+            oldMessage.remove();
+        }
+
+        books.forEach(book => {
+
+            const nama =
+                book.getAttribute('data-nama') || '';
+
+            const parent =
+                book.closest('.book-link');
+
+            if (nama.includes(query) && query !== '') {
+
+                parent.style.display = 'inline-block';
+
+                ditemukan = true;
+
             } else {
-                if (parent) {
-                    parent.style.display = 'none';
-                } else {
-                    book.style.display = 'none';
-                }
+
+                parent.style.display = 'none';
             }
         });
+
+        // MODE SEARCH
+        if (query !== '') {
+
+            judulPelajaran.innerText =
+                'Hasil Pencarian :';
+
+            umumSection.style.display = 'none';
+
+        } else {
+
+            // kembali normal
+            judulPelajaran.innerText =
+                'Buku Pelajaran :';
+
+            umumSection.style.display = 'block';
+
+            books.forEach(book => {
+
+                const parent =
+                    book.closest('.book-link');
+
+                parent.style.display = 'inline-block';
+            });
+        }
+
+        // JIKA TIDAK ADA HASIL
+        if (!ditemukan && query !== '') {
+
+            const message =
+                document.createElement('div');
+
+            message.id = 'notFoundMessage';
+
+            message.innerText = 'Hasil tidak ada';
+
+            message.style.width = '100%';
+            message.style.height = '300px';
+            message.style.display = 'flex';
+            message.style.alignItems = 'center';
+            message.style.justifyContent = 'center';
+            message.style.fontSize = '22px';
+            message.style.color = 'gray';
+
+            container.appendChild(message);
+        }
     }
 
-    // Tekan Enter untuk mencari
-    document.getElementById('searchInput').addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            searchBooks();
-        }
-    });
+    // ENTER UNTUK SEARCH
+    document.getElementById('searchInput')
+        .addEventListener('keydown', function(e) {
+
+            if (e.key === 'Enter') {
+
+                e.preventDefault();
+
+                searchBooks();
+            }
+        });
 </script>
 </body>
 </html>

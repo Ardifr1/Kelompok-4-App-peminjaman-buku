@@ -139,11 +139,21 @@ img {
 
 
 /* tabel kelola */
-
+.tambah{
+    display: inline-block;
+    padding: 16px 15px;
+    background-color: #8d8d8d;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: .3s;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.6);
+}
 .font{
     font-weight: bold;
     font-size: 30px;
-    color: #000000;
+    color: white;
 }
 .tabel-container {
     background-color: white;

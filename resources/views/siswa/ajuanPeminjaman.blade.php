@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="{{ asset('css/ajuanPeminjaman.css') }}">
 </head>
 <body>
-
-    <a href="/deskripsiBuku" class="btn-kembali">Kembali</a>
+    
+    <a href="/dashboard" class="btn-kembali">Kembali</a>
     <div class="main-container">
         <div class="form-container">
             <div class="form-title">Isi Form Pengajuan</div>
