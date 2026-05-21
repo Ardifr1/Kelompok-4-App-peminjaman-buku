@@ -110,6 +110,28 @@ img {
     background-color: #5aa142;
     color: white;
 }
+.keluar{
+    width: 150px;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    margin-top: auto; /* Posisikan di bagian bawah */
+    background-color: #ff4b5c;
+    color: white;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.6);
+    transition: .3s;
+}
+.keluar:hover {
+    background-color: #ff4b5c;
+    color: white;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.6);
+    transition: .3s;
+    opacity: 75%;
+    border: 2px solid white;
+}
+
 
 /* CONTENT AREA */
 .content-wrapper {

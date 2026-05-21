@@ -25,6 +25,7 @@
         <aside class="sidebar">
             <a href="/dashboard" class="menu-item active">Menu Buku</a>
             <a href="/riwayat" class="menu-item">Riwayat</a>
+            <a href="/login" class="keluar"><i class="fa-solid fa-right-from-bracket"></i> Keluar</a>
         </aside>
 
         <main class="content-wrapper">
