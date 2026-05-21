@@ -15,24 +15,34 @@
         <div class="form-container">
             <div class="form-title">Isi Form Pengajuan</div>
 
-            <form action="#" method="GET">
+            <form action="{{ route('peminjaman.store', $buku->id) }}" method="POST">
+                @csrf
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Nama Buku" value="{{ $buku->nama_buku }}" readonly required>
                     <input type="hidden" name="buku_id" value="{{ $buku->id }}">
                 </div>
                 <div class="form-group">
-                    <input type="datetime-local" class="form-control" required title="Tanggal meminjam" placeholder="Tanggal meminjam">
+                    <input type="datetime-local" name="tanggal_pinjam" class="form-control" required title="Tanggal meminjam" placeholder="Tanggal meminjam">
                 </div>
                 <div class="form-group">
-                    <input type="datetime-local" class="form-control" required title="Tanggal pengembalian" placeholder="Tanggal pengembalian">
+                    <input type="datetime-local" name="tanggal_kembali" class="form-control" required title="Tanggal pengembalian" placeholder="Tanggal pengembalian">
                 </div>
                 <div class="form-group row-bottom">
-                    <input type="number" class="form-control" placeholder="Jumlah" min="1" max="{{ $buku->jumlah_buku }}" required>
+                    <input type="number" id="jumlah_pinjam" name="jumlah" class="form-control" placeholder="Jumlah" min="1" max="{{ $buku->jumlah_buku }}" required>
                     <button type="submit" class="btn-ajukan">Ajukan</button>
                 </div>
             </form>
         </div>
     </div>
 
+    <script>
+        document.getElementById('jumlah_pinjam').addEventListener('input', function() {
+            const max = parseInt(this.getAttribute('max')) || 0;
+            const val = parseInt(this.value) || 0;
+            if (val > max) {
+                this.value = max;
+            }
+        });
+    </script>
 </body>
 </html>

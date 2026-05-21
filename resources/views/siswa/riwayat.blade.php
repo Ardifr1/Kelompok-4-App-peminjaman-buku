@@ -46,14 +46,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($riwayat as $riwayat)
+                        @forelse($riwayat as $item)
                             <tr>
                                 <td>{{ sprintf('%02d', $loop->iteration) }}</td>
                             
-                                <td>{{ $riwayat->nama_buku }}</td>
+                                <td>{{ $item->buku->nama_buku ?? 'Buku Terhapus' }}</td>
                             
-                                <td>{{ \Carbon\Carbon::parse($riwayat->tanggal_pinjam)->format('d/m/Y') }}</td>
-                                <td>{{ $riwayat->tanggal_kembali ? \Carbon\Carbon::parse($riwayat->tanggal_kembali)->format('d/m/Y') : '-' }}</td>
+                                <td>{{ \Carbon\Carbon::parse($item->tanggal_pinjam)->format('d/m/Y') }}</td>
+                                <td>{{ $item->tanggal_kembali ? \Carbon\Carbon::parse($item->tanggal_kembali)->format('d/m/Y') : '-' }}</td>
                             </tr>
                         @empty
                             <tr>

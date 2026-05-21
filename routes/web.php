@@ -40,6 +40,7 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 // Route Fitur Siswa
 Route::get('/deskripsiBuku/{id}', [DashboardController::class, 'deskripsiBuku']);
 Route::get('/ajuanPeminjaman/{id}', [PeminjamanController::class, 'create']);
+Route::post('/ajuanPeminjaman/{id}', [PeminjamanController::class, 'store'])->name('peminjaman.store');
 Route::get('/riwayat', [RiwayatController::class, 'index']);
 Route::get('/pengembalian', [pengembalianController::class, 'index']);
 

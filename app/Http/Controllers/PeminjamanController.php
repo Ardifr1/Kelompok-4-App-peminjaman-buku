@@ -26,9 +26,31 @@ class PeminjamanController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $buku = \App\Models\bukuModel::findOrFail($id);
+
+        $request->validate([
+            'tanggal_pinjam' => 'required',
+            'tanggal_kembali' => 'required|after_or_equal:tanggal_pinjam',
+            'jumlah' => 'required|integer|min:1|max:' . $buku->jumlah_buku,
+        ]);
+
+        // Kurangi stok buku
+        $buku->jumlah_buku -= $request->jumlah;
+        $buku->save();
+
+        // Simpan data peminjaman ke tabel riwayat
+        \App\Models\RiwayatModel::create([
+            'user_id' => auth()->id(),
+            'buku_id' => $buku->id,
+            'tanggal_pinjam' => $request->tanggal_pinjam,
+            'tanggal_kembali' => $request->tanggal_kembali,
+            'status' => 'dipinjam',
+            'jumlah' => $request->jumlah,
+        ]);
+
+        return redirect('/dashboard')->with('success', 'Peminjaman buku berhasil diajukan.');
     }
 
     /**
