@@ -35,6 +35,12 @@
         <main class="content-wrapper">
             <div class="blue-container">
 
+                {{-- Notifikasi sukses --}}
+                @if(session('success'))
+                    <div style="background-color: #d4edda; color: #155724; padding: 12px 20px; border-radius: 10px; margin-bottom: 20px; font-weight: 500;">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 
                 <section class="book-section">
                     <div class="action-buttons">
@@ -48,8 +54,16 @@
                             <div class="action-column" id="actionColumn">
                                 @foreach($buku as $item)
                                 <div class="action-btn">
-                                    <i class="fa-solid fa-trash"></i>
-                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <form action="{{ route('buku.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus buku ini?')" style="margin: 0; display: inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer; color: black;">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+                                    </form>
+                                    <a href="{{ route('buku.edit', $item->id) }}" style="color: black;">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
                                 </div>
                                 @endforeach
                             </div>

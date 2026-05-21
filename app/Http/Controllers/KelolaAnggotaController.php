@@ -11,6 +11,13 @@ class KelolaAnggotaController extends Controller
     {
         $anggota = User::where('role', 'siswa')->where('status', 'approved')->get();
         return view('admin.kelola_anggota', compact('anggota'));
+        
+        // Menghitung jumlah pendaftar yang butuh konfirmasi
+        $pendingCount = User::where('role', 'siswa')
+                            ->where('status', 'pending')
+                            ->count();
+
+        return view('admin.kelola_anggota', compact('anggota', 'pendingCount'));
     }
 
     public function destroy($id)

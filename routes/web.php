@@ -13,6 +13,7 @@ use App\Http\Controllers\konfirmasiController;
 use App\Http\Controllers\tambahbukuController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\pengembalianController;
+use App\Http\Middleware\IsAdmin;
 
 
 /*
@@ -46,15 +47,20 @@ Route::post('/riwayat/{id}/kembalikan', [RiwayatController::class, 'ajukanPengem
 Route::get('/pengembalian', [pengembalianController::class, 'index']);
 
 // Route Fitur Admin
-Route::get('/dashboardAdmin', [AdminDashboardController::class, 'index']);
-Route::get('/anggota', [KelolaAnggotaController::class, 'index']);
-Route::delete('/anggota/{id}', [KelolaAnggotaController::class, 'destroy'])->name('anggota.destroy');
-Route::get('/konfirmasi', [konfirmasiController::class, 'index']);
-Route::post('/konfirmasi/{id}/approve', [konfirmasiController::class, 'approve'])->name('konfirmasi.approve');
-Route::delete('/konfirmasi/{id}/reject', [konfirmasiController::class, 'reject'])->name('konfirmasi.reject');
-Route::get('/tambahbuku', [tambahbukuController::class, 'index']);
-Route::post('/tambahbuku', [tambahbukuController::class, 'store'])->name('tambahbuku.store');
-Route::get('/transaksi', [TransaksiController::class, 'index']);
-Route::post('/transaksi/{id}/setujui', [TransaksiController::class, 'setujuiPeminjaman'])->name('transaksi.setujui');
-Route::post('/transaksi/{id}/tolak', [TransaksiController::class, 'tolakPeminjaman'])->name('transaksi.tolak');
-Route::post('/transaksi/{id}/konfirmasi-kembali', [TransaksiController::class, 'konfirmasiPengembalian'])->name('transaksi.konfirmasi_kembali');
+Route::middleware(['auth', IsAdmin::class])->group(function () {
+        Route::get('/dashboardAdmin', [AdminDashboardController::class, 'index']);
+        Route::get('/anggota', [KelolaAnggotaController::class, 'index']);
+        Route::delete('/anggota/{id}', [KelolaAnggotaController::class, 'destroy'])->name('anggota.destroy');
+        Route::get('/konfirmasi', [konfirmasiController::class, 'index']);
+        Route::post('/konfirmasi/{id}/approve', [konfirmasiController::class, 'approve'])->name('konfirmasi.approve');
+        Route::delete('/konfirmasi/{id}/reject', [konfirmasiController::class, 'reject'])->name('konfirmasi.reject');
+        Route::get('/tambahbuku', [tambahbukuController::class, 'index']);
+        Route::post('/tambahbuku', [tambahbukuController::class, 'store'])->name('tambahbuku.store');
+        Route::get('/buku/{id}/edit', [tambahbukuController::class, 'edit'])->name('buku.edit');
+        Route::put('/buku/{id}', [tambahbukuController::class, 'update'])->name('buku.update');
+        Route::delete('/buku/{id}', [tambahbukuController::class, 'destroy'])->name('buku.destroy');
+        Route::get('/transaksi', [TransaksiController::class, 'index']);
+        Route::post('/transaksi/{id}/setujui', [TransaksiController::class, 'setujuiPeminjaman'])->name('transaksi.setujui');
+        Route::post('/transaksi/{id}/tolak', [TransaksiController::class, 'tolakPeminjaman'])->name('transaksi.tolak');
+        Route::post('/transaksi/{id}/konfirmasi-kembali', [TransaksiController::class, 'konfirmasiPengembalian'])->name('transaksi.konfirmasi_kembali');
+});

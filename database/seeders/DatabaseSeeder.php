@@ -17,27 +17,26 @@ class DatabaseSeeder extends Seeder
     {
         User::factory()->create([
             'name' => 'Administrator',
-            'username' => 'admin',
-            'password' => bcrypt('password'),
+            'username' => 'admin1',
+            'password' => bcrypt('Admin123'),
             'role' => 'admin',
+            'status' => 'approved',
         ]);
 
         User::factory()->create([
-            'name' => 'Budi Santoso',
-            'username' => 'siswa',
-            'password' => bcrypt('password'),
-            'role' => 'siswa',
-            'nis' => '12345',
-            'kelas' => 'XII PPLG 1',
+            'name' => 'Administrator',
+            'username' => 'admin2',
+            'password' => bcrypt('Admin123'),
+            'role' => 'admin',
+            'status' => 'approved',
         ]);
 
         User::factory()->create([
-            'name' => 'Raiky Adila Fitriadi',
-            'username' => 'raiky',
-            'password' => bcrypt('raiky123'),
-            'role' => 'siswa',
-            'nis' => '12346',
-            'kelas' => 'XII PPLG 1',
+            'name' => 'Administrator',
+            'username' => 'admin3',
+            'password' => bcrypt('Admin123'),
+            'role' => 'admin',
+            'status' => 'approved',
         ]);
     }
 }
