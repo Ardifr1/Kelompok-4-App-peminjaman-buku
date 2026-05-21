@@ -36,21 +36,17 @@ class PeminjamanController extends Controller
             'jumlah' => 'required|integer|min:1|max:' . $buku->jumlah_buku,
         ]);
 
-        // Kurangi stok buku
-        $buku->jumlah_buku -= $request->jumlah;
-        $buku->save();
-
-        // Simpan data peminjaman ke tabel riwayat
+        // Simpan data peminjaman ke tabel riwayat dengan status pending
         \App\Models\RiwayatModel::create([
             'user_id' => auth()->id(),
             'buku_id' => $buku->id,
             'tanggal_pinjam' => $request->tanggal_pinjam,
             'tanggal_kembali' => $request->tanggal_kembali,
-            'status' => 'dipinjam',
+            'status' => 'pending',
             'jumlah' => $request->jumlah,
         ]);
 
-        return redirect('/dashboard')->with('success', 'Peminjaman buku berhasil diajukan.');
+        return redirect('/dashboard')->with('success', 'Peminjaman buku berhasil diajukan. Menunggu konfirmasi Admin.');
     }
 
     /**

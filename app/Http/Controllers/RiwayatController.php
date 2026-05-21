@@ -62,5 +62,16 @@ class RiwayatController extends Controller
         //
     }
 
+    public function ajukanPengembalian($id)
+    {
+        $riwayat = RiwayatModel::where('user_id', Auth::id())
+            ->where('status', 'dipinjam')
+            ->findOrFail($id);
+
+        $riwayat->status = 'kembali_pending';
+        $riwayat->save();
+
+        return redirect('/riwayat')->with('success', 'Pengajuan pengembalian berhasil dikirim. Menunggu konfirmasi Admin.');
+    }
 }
 

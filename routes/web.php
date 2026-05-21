@@ -42,6 +42,7 @@ Route::get('/deskripsiBuku/{id}', [DashboardController::class, 'deskripsiBuku'])
 Route::get('/ajuanPeminjaman/{id}', [PeminjamanController::class, 'create']);
 Route::post('/ajuanPeminjaman/{id}', [PeminjamanController::class, 'store'])->name('peminjaman.store');
 Route::get('/riwayat', [RiwayatController::class, 'index']);
+Route::post('/riwayat/{id}/kembalikan', [RiwayatController::class, 'ajukanPengembalian'])->name('riwayat.kembalikan');
 Route::get('/pengembalian', [pengembalianController::class, 'index']);
 
 // Route Fitur Admin
@@ -54,3 +55,6 @@ Route::delete('/konfirmasi/{id}/reject', [konfirmasiController::class, 'reject']
 Route::get('/tambahbuku', [tambahbukuController::class, 'index']);
 Route::post('/tambahbuku', [tambahbukuController::class, 'store'])->name('tambahbuku.store');
 Route::get('/transaksi', [TransaksiController::class, 'index']);
+Route::post('/transaksi/{id}/setujui', [TransaksiController::class, 'setujuiPeminjaman'])->name('transaksi.setujui');
+Route::post('/transaksi/{id}/tolak', [TransaksiController::class, 'tolakPeminjaman'])->name('transaksi.tolak');
+Route::post('/transaksi/{id}/konfirmasi-kembali', [TransaksiController::class, 'konfirmasiPengembalian'])->name('transaksi.konfirmasi_kembali');
