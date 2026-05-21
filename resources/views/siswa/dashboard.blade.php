@@ -31,20 +31,17 @@
             <div class="blue-container">
                 <section class="search-section">
                     <div class="search-bar" style="display:flex;justify-content:center;">
-                        
-                        <input type="text" placeholder="Cari buku..." class="search-input" name="search" id="searchInput">
-                        
+                        <input type="text" placeholder="Cari buku..." class="search-input" name="search" id="searchInput" oninput="searchBooks()">
                     </div>
                 </section>
 
-                <!-- SECTION BUKU PELAJARAN -->
                 <section class="book-section" id="pelajaranSection">
                     <div class="section-header">
-                        <span class="category-title">Buku Pelajaran :</span>
+                        <span class="category-title" id="judulPelajaran">Buku Pelajaran :</span>
                     </div>
-                    <div class="book-container">
+                    <div class="book-container" id="containerPelajaran">
                         @forelse($bukuPelajaran as $buku)
-                            <a href="/deskripsiBuku/{{ $buku->id }}" class="book-link">
+                            <a href="/deskripsiBuku/{{ $buku->id }}" class="book-link" data-kategori="pelajaran">
                                 <div class="book" data-nama="{{ strtolower($buku->nama_buku) }}">
                                     @if($buku->gambar)
                                         <img src="{{ asset($buku->gambar) }}" alt="{{ $buku->nama_buku }}" class="book-cover">
@@ -54,20 +51,19 @@
                             </a>
                         @empty
                             <p class="empty-text">Belum ada buku pelajaran.</p>
-                        @endforelse
+                        @endempty
                     </div>
                 </section>
 
                 <br>
 
-                <!-- SECTION BUKU UMUM -->
                 <section class="book-section lesson-section" id="umumSection">
                     <div class="section-header">
-                        <span class="category-title">Buku Umum :</span>
+                        <span class="category-title" id="judulUmum">Buku Umum :</span>
                     </div>
-                    <div class="book-container">
+                    <div class="book-container" id="containerUmum">
                         @forelse($bukuUmum as $buku)
-                            <a href="/deskripsiBuku/{{ $buku->id }}" class="book-link">
+                            <a href="/deskripsiBuku/{{ $buku->id }}" class="book-link" data-kategori="umum">
                                 <div class="book" data-nama="{{ strtolower($buku->nama_buku) }}">
                                     @if($buku->gambar)
                                         <img src="{{ asset($buku->gambar) }}" alt="{{ $buku->nama_buku }}" class="book-cover">
@@ -77,123 +73,95 @@
                             </a>
                         @empty
                             <p class="empty-text">Belum ada buku umum.</p>
-                        @endforelse
+                        @endempty
                     </div>
                 </section>
+
+                <div id="globalMessageContainer"></div>
             </div>
         </main>
     </div>
 
-    <script>
-    function searchBooks() {
+<script>
+function searchBooks() {
+    const query = document.getElementById('searchInput').value.toLowerCase().trim();
+    const books = document.querySelectorAll('.book');
+    
+    const pelajaranSection = document.getElementById('pelajaranSection');
+    const umumSection = document.getElementById('umumSection');
+    
+    const judulPelajaran = document.getElementById('judulPelajaran');
+    const judulUmum = document.getElementById('judulUmum');
+    
+    const globalContainer = document.getElementById('globalMessageContainer');
 
-        const query = document
-            .getElementById('searchInput')
-            .value
-            .toLowerCase();
+    globalContainer.innerHTML = '';
 
-        const books = document.querySelectorAll('.book');
+    let adaPelajaran = false;
+    let adaUmum = false;
 
-        const pelajaranSection =
-            document.getElementById('pelajaranSection');
-
-        const umumSection =
-            document.getElementById('umumSection');
-
-        const judulPelajaran =
-            pelajaranSection.querySelector('.category-title');
-
-        const container =
-            pelajaranSection.querySelector('.book-container');
-
-        let ditemukan = false;
-
-        // hapus pesan lama
-        const oldMessage =
-            document.getElementById('notFoundMessage');
-
-        if (oldMessage) {
-            oldMessage.remove();
-        }
-
+    if (query === '') {
+        judulPelajaran.innerText = 'Buku Pelajaran :';
+        judulUmum.innerText = 'Buku Umum :';
+        pelajaranSection.style.display = 'block';
+        umumSection.style.display = 'block';
+        
         books.forEach(book => {
-
-            const nama =
-                book.getAttribute('data-nama') || '';
-
-            const parent =
-                book.closest('.book-link');
-
-            if (nama.includes(query) && query !== '') {
-
-                parent.style.display = 'inline-block';
-
-                ditemukan = true;
-
-            } else {
-
-                parent.style.display = 'none';
-            }
+            book.closest('.book-link').style.display = 'inline-block';
         });
-
-        // MODE SEARCH
-        if (query !== '') {
-
-            judulPelajaran.innerText =
-                'Hasil Pencarian :';
-
-            umumSection.style.display = 'none';
-
-        } else {
-
-            // kembali normal
-            judulPelajaran.innerText =
-                'Buku Pelajaran :';
-
-            umumSection.style.display = 'block';
-
-            books.forEach(book => {
-
-                const parent =
-                    book.closest('.book-link');
-
-                parent.style.display = 'inline-block';
-            });
-        }
-
-        // JIKA TIDAK ADA HASIL
-        if (!ditemukan && query !== '') {
-
-            const message =
-                document.createElement('div');
-
-            message.id = 'notFoundMessage';
-
-            message.innerText = 'Hasil tidak ada';
-
-            message.style.width = '100%';
-            message.style.height = '300px';
-            message.style.display = 'flex';
-            message.style.alignItems = 'center';
-            message.style.justifyContent = 'center';
-            message.style.fontSize = '22px';
-            message.style.color = 'gray';
-
-            container.appendChild(message);
-        }
+        return;
     }
 
-    // ENTER UNTUK SEARCH
-    document.getElementById('searchInput')
-        .addEventListener('keydown', function(e) {
+    judulPelajaran.innerText = 'Hasil Pencarian Pelajaran :';
+    judulUmum.innerText = 'Hasil Pencarian Umum :';
 
-            if (e.key === 'Enter') {
+    books.forEach(book => {
+        const namaBuku = book.getAttribute('data-nama') || '';
+        const parentLink = book.closest('.book-link');
+        const kategori = parentLink.getAttribute('data-kategori');
 
-                e.preventDefault();
+        if (namaBuku.includes(query)) {
+            parentLink.style.display = 'inline-block';
+            if (kategori === 'pelajaran') adaPelajaran = true;
+            if (kategori === 'umum') adaUmum = true;
+        } else {
+            parentLink.style.display = 'none';
+        }
+    });
 
-                searchBooks();
-            }
-        });
+    if (adaPelajaran) {
+        pelajaranSection.style.display = 'block';
+    } else {
+        pelajaranSection.style.display = 'none';
+    }
+
+    if (adaUmum) {
+        umumSection.style.display = 'block';
+    } else {
+        umumSection.style.display = 'none';
+    }
+
+    if (!adaPelajaran && !adaUmum) {
+        const message = document.createElement('div');
+        message.innerText = 'Hasil pencarian tidak ditemukan';
+        message.style.width = '100%';
+        message.style.height = '200px';
+        message.style.display = 'flex';
+        message.style.alignItems = 'center';
+        message.style.justifyContent = 'center';
+        message.style.fontSize = '20px';
+        message.style.color = 'gray';
+        
+        globalContainer.appendChild(message);
+    }
+}
+
+document.getElementById('searchInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        searchBooks();
+    }
+});
 </script>
 </body>
 </html>

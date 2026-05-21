@@ -17,14 +17,32 @@ body {
 }
 
 .back-btn { 
+    background-color: #7e8d81;
     text-decoration: none; 
-    color: #000; 
+    color: #000000; 
     font-size: 22px; 
     font-weight: 500; 
+    border-radius: 50px;
+    max-width: 150px;
+    width: 100px;
+    text-align: center;
+    border: 2px solid black;
 }
 
+.back-btn:hover {
+    background-color: #58645b;
+    text-decoration: none; 
+    color: #ffffffa8; 
+    font-size: 22px; 
+    font-weight: 500; 
+    border-radius: 50px;
+    max-width: 150px;
+    width: 100px;
+    text-align: center;
+    border: 3px solid gray;
+}
 .container { 
-    background-color: #657167; 
+    background-color: #7e8d81; 
     border-radius: 20px; 
     padding: 40px 60px; 
     max-width: 900px; 

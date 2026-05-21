@@ -28,7 +28,7 @@
         </aside>
 
         <main class="content-wrapper">
-        <div class="blue-container">
+        <div class="light-green-container">
             <div class="book-container">
                 <table class="table-riwayat" border="1" cellpadding="10" cellspacing="0">
                     <thead>
@@ -40,7 +40,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($Riwayat as $riwayat)
+                        @forelse($riwayat as $riwayat)
                             <tr>
                                 <td>{{ sprintf('%02d', $loop->iteration) }}</td>
                             

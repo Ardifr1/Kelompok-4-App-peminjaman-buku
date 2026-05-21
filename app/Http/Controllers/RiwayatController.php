@@ -10,7 +10,7 @@ class RiwayatController extends Controller
 {
     public function index()
     {
-        $Riwayat = RiwayatModel::where('user_id', Auth::id())->latest()->get();
+        $riwayat = RiwayatModel::where('user_id', Auth::id())->latest()->get();
 
         return view('siswa.riwayat', compact('riwayat'));
     }
