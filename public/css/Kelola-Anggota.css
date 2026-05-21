@@ -93,6 +93,26 @@ img {
     box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.6);
     transition: .3s;
 }
+.menu-item:hover {
+    width: 150px;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 15px;
+    background-color: #5aa14200;
+    opacity: 75%;
+    border: 2px solid white;
+    color: white;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
+    transition: .3s;
+
+}
+.menu-item.active {
+    background-color: #8d8d8d;
+    color: white;
+}
 .keluar{
     width: 150px;
     padding: 10px;
@@ -107,10 +127,6 @@ img {
     transition: .3s;
 }
 
-.menu-item.active {
-    background-color: #8d8d8d;
-    color: white;
-}
 
 /* CONTENT AREA */
 .content-wrapper {

@@ -25,10 +25,16 @@
         <aside class="sidebar">
             <a href="/dashboard" class="menu-item">Menu Buku</a>
             <a href="/riwayat" class="menu-item active">Riwayat</a>
+            <a href="/login" class="keluar"><i class="fa-solid fa-right-from-bracket"></i> Keluar</a>
         </aside>
 
+        
         <main class="content-wrapper">
         <div class="light-green-container">
+            <div class="button-action">
+            <a href="/pengembalian" class="tambah">Ajukan pengembalian</a>
+        </div>
+        <br>
             <div class="book-container">
                 <table class="table-riwayat" border="1" cellpadding="10" cellspacing="0">
                     <thead>

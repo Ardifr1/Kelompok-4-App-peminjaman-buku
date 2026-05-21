@@ -12,6 +12,7 @@ use App\Http\Controllers\KelolaAnggotaController;
 use App\Http\Controllers\konfirmasiController;
 use App\Http\Controllers\tambahbukuController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\pengembalianController;
 
 
 /*
@@ -40,6 +41,7 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/deskripsiBuku/{id}', [DashboardController::class, 'deskripsiBuku']);
 Route::get('/ajuanPeminjaman/{id}', [PeminjamanController::class, 'create']);
 Route::get('/riwayat', [RiwayatController::class, 'index']);
+Route::get('/pengembalian', [pengembalianController::class, 'index']);
 
 // Route Fitur Admin
 Route::get('/dashboardAdmin', [AdminDashboardController::class, 'index']);
