@@ -87,7 +87,7 @@
     <div class="header-right">
 
         <div class="profile-info">
-            <p>Admin KIKIR</p>
+            <p>Administrator</p>
         </div>
 
         <img src="{{ asset('gambar/logo peminjaman buku.jpg') }}"
