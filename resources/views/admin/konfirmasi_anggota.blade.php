@@ -37,7 +37,7 @@
                         <tr>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->kelas }}</td>
-                            <td>{{ $user->nis }}</td>
+                            <td>{{ $user->NIS }}</td>
                             <td style="display: flex; gap: 10px; justify-content: center;">
                                 <form action="{{ route('konfirmasi.reject', $user->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menolak dan menghapus akun ini?');">
                                     @csrf

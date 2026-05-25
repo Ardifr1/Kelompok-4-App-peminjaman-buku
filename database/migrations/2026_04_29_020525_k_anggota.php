@@ -13,9 +13,10 @@ return new class extends Migration
     {
         schema::create('Anggota', function (blueprint $table) {
             $table->id();
+            $table->string('NIS');
+            $table->foreign('NIS')->references('NIS')->on('users')->onDelete('cascade');
             $table->string('nama');
             $table->string('kelas');
-            $table->string('NIS')->unique();
             $table->string('Username');
         });
     }

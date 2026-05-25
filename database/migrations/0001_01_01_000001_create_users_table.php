@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('username')->unique();
             $table->enum('role', ['admin', 'siswa'])->default('siswa');
-            $table->string('nis')->nullable();
+            $table->string('NIS');
+            $table->foreign('NIS')->references('NIS')->on('registrasi')->onDelete('cascade');
             $table->string('kelas')->nullable();
             $table->enum('status', ['pending', 'approved'])->default('pending');
             

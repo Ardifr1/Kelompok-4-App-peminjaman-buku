@@ -15,7 +15,7 @@
         <div class="header-right">
             <div class="profile-info">
                 <p>{{ Auth::user()->name }}</p>
-                <p>{{ Auth::user()->nis }}</p>
+                <p>{{ Auth::user()->NIS }}</p>
             </div>
             <img src="{{ asset('gambar/User.jpeg') }}" class="logo-img">
         </div>

@@ -61,7 +61,7 @@
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->kelas ?? '-' }}</td>
-                            <td>{{ $item->nis ?? '-' }}</td>
+                            <td>{{ $item->NIS ?? '-' }}</td>
                             <td style="display: flex; gap: 10px; justify-content: center;">
                                 <form action="{{ route('anggota.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus anggota ini?');">
                                     @csrf

@@ -13,13 +13,13 @@ return new class extends Migration
     {
         // Menggunakan Schema dengan huruf kapital
         Schema::create('registrasi', function (Blueprint $table) {
-            $table->id();
-            $table->string('nis')->unique();
-            $table->string('nama');
-            $table->string('username');
-            $table->string('kelas');
-            $table->string('password');
-            $table->timestamps();
+        $table->id();
+        $table->string('NIS')->unique();
+        $table->string('nama');
+        $table->string('username')->unique();
+        $table->string('kelas');
+        $table->string('password');
+        $table->timestamps();
         });
     }
     public function down(): void
